@@ -1,0 +1,89 @@
+<% provide :title, t("books.title") %>
+
+<section class="pcoded-main-container">
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <div class="main-body">
+          <div class="page-wrapper">
+            <div class="page-header">
+              <div class="page-block">
+                <div class="row align-items-center">
+                  <div class="col-md-12">
+                    <div class="page-header-title">
+                      <h5 class="m-b-10">
+                        <%= t "books.title" %>
+                      </h5>
+                    </div>
+                    <ul class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <%= link_to admin_home_path do %>
+                          <i class="feather icon-home"></i>
+                        <% end %>
+                      </li>
+                      <li class="breadcrumb-item">
+                        <%= link_to t("home"), admin_home_path %>
+                      </li>
+                      <li class="breadcrumb-item">
+                        <%= link_to t("books.title"), "#" %>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="page-header">
+                  <div class="">
+                    <h5>
+                      <%= link_to t("books.add"), new_admin_book_path, class:"btn btn-primary" %>
+                      <%= link_to t("books.analytics"), "#", class:"btn btn-primary" %>
+                      <%= link_to t("books.search"), "#", class:"btn btn-primary" %>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover m-b-0 table-book">
+                        <thead>
+                          <tr>
+                            <th>
+                              <%= t "books.image" %>
+                            </th>
+                            <th>
+                              <%= t "books.name" %>
+                            </th>
+                            <th>
+                              <%= t "books.des" %>
+                            </th>
+                            <th>
+                              <%= t "books.count" %>
+                            </th>
+                            <th>
+                              <%= t "books.author" %>
+                            </th>
+                            <th>
+                              <%= t "books.publiser" %>
+                            </th>
+                            <th>
+                              <%= t "action" %>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <%= render @books %>
+                        </tbody>
+                      </table>
+                    </div>
+                    <%== pagy_nav @pagy %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

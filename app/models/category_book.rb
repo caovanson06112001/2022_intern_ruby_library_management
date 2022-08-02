@@ -1,5 +1,6 @@
 class CategoryBook < ApplicationRecord
-  has_many :books, dependent: :destroy
+  has_many :category_book, dependent: :destroy
+  has_many :books, through: :category_book
 
   validates :name, presence: true, length: {minimum: Settings.book.min}
 
