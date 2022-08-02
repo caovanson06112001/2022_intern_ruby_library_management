@@ -6,7 +6,9 @@ Rails.application.routes.draw do
       post "/login", to: "sessions#create"
       get "/register", to: "sessions#register"
       delete "/logout", to: "sessions#destroy"
+      put "/user/activate:id", to: "users#update", :as => :user_activate
       resources :category
+      resources :users
     end
   end
 end

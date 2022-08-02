@@ -1,0 +1,34 @@
+<tr>
+  <td>
+    <%= image_tag "user/avatar.png", alt: "user", class: "img-radius img-fluid wid-60" %>
+  </td>
+  <td>
+    <%= user.name %>
+  </td>
+  <td>
+    <%= user.email %>
+  </td>
+  <td>
+    <%= user.phone_number %>
+  </td>
+  <td>
+    <%= user.admin? ? render_admin : render_user %>
+  </td>
+  <td>
+    <%= link_to "javascript:void(0)",
+      {class: "btn btn-icon btn-success show_user",
+        data: { bs_toggle: "modal",
+        id: user,
+        url: admin_user_path(user),
+        url_activate: admin_user_activate_path(user),
+        bs_target: "#exampleModalCenter"}} do %>
+      <i class="icon feather icon-eye f-16"></i>
+    <% end %>
+    <%= link_to "javascript:void(0)",
+      {class: "btn btn-icon btn-warning active_user",
+        data: { url: admin_user_activate_path(user),
+        bs_placement: "top"}} do %>
+      <i class="icon feather icon-check-square f-16"></i>
+    <% end %>
+  </td>
+</tr>

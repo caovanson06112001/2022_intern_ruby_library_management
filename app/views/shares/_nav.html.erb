@@ -86,25 +86,19 @@
         <li class="nav-item pcoded-hasmenu">
           <%= link_to "#", class:"nav-link" do %>
             <span class="pcoded-micon">
-              <i class="fas fa-address-card"></i>
+              <i class="fas fa-user"></i>
             </span>
             <span class="pcoded-mtext">
-              <%= t "page1" %>
+              <%= t "users.account" %>
             </span>
-            <span class="pcoded-badge badge bg-danger">100+</span>
           <% end %>
           <ul class="pcoded-submenu">
             <li>
-              <%= link_to t("page1"), "#" %>
+              <%= link_to t("users.profile"), "#" %>
             </li>
             <li>
-              <%= link_to t("page2"), "#" %>
+              <%= link_to t("users.change_password"), "#" %>
             </li>
-            <li>
-              <%= link_to t("page1"), "#" %>
-            </li>
-            <li>
-              <%= link_to t("page2"), "#" %>
             </li>
           </ul>
         </li>
@@ -145,6 +139,16 @@
             </span>
             <span class="pcoded-mtext">
               <%= t "category.title" %>
+            </span>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admin_users_path, class:"nav-link" do %>
+            <span class="pcoded-micon">
+              <i class="feather icon-users"></i>
+            </span>
+            <span class="pcoded-mtext">
+              <%= t "users.title" %>
             </span>
           <% end %>
         </li>
