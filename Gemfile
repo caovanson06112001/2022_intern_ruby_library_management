@@ -5,6 +5,7 @@ ruby "3.0.2"
 
 gem "active_storage_validations", "0.8.2"
 gem "bcrypt", "3.1.13"
+gem "bootsnap", ">= 1.4.4", require: false
 gem "config"
 gem "figaro"
 gem "image_processing", "1.9.3"
@@ -21,10 +22,9 @@ gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
-gem "bootsnap", ">= 1.4.4", require: false
-
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "pry-rails"
 end
 
 group :development, :test do

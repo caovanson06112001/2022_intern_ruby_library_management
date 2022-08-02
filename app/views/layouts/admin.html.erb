@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AdminGradient</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "admin", media: "all", "data-turbolinks-track": "preload" %>
+    <%= javascript_pack_tag "admin", "data-turbolinks-track": "reload" %>
+  </head>
+  <body>
+    <%= render "shares/nav" %>
+    <%= render "shares/header" %>
+    <%= yield %>
+    <%= render "shares/footer" %>
+  </body>
+</html>

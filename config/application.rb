@@ -18,5 +18,8 @@ module Intern2022RubyLibraryManagement
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.default_locale = :vi
+    config.i18n.available_locales = [:vi,:en]
   end
 end
