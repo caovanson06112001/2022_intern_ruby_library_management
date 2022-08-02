@@ -11,3 +11,5 @@ author:
   min: 3
 max_page_category: 8
 max_page_user: 8
+publisers:
+  min: 3
