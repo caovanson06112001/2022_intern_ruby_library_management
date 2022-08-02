@@ -18,3 +18,8 @@ vi:
   messages: "Tin nhắn"
   english: "Tiếng anh"
   vietnamese: "Tiếng việt"
+  remember_me: "Ghi nhớ đăng nhập"
+  log_in: "Đăng nhập"
+  forgot_password: "Quên mật khẩu ?"
+  user_login:
+    error_login: "Tên đăng nhập hoặc mật khẩu không đúng"
