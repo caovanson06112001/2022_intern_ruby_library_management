@@ -11,3 +11,8 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+require("login/jquery-3.2.1.min.js")
+require("login/boostrap.js")
+require("login/animsition.min.js")
+require("login/select2.js")
+require("login/main.js")
