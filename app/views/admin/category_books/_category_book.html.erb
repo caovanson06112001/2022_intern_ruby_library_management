@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= category_book.id %>
+  </td>
+  <td>
+    <%= category_book.name %>
+  </td>
+  <td>
+    <%= category_book.created_at %>
+  </td>
+  <td>
+    <%= link_to edit_admin_category_path(category_book),
+      {class: "btn btn-icon btn-success",
+        data: { bs_toggles: "tooltip",
+        bs_placement: "top"}} do %>
+      <i class="icon feather icon-edit f-16"></i>
+    <% end %>
+  </td>
+</tr>

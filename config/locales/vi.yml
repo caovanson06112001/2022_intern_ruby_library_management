@@ -21,5 +21,14 @@ vi:
   remember_me: "Ghi nhớ đăng nhập"
   log_in: "Đăng nhập"
   forgot_password: "Quên mật khẩu ?"
+  home: "Trang chủ"
   user_login:
     error_login: "Tên đăng nhập hoặc mật khẩu không đúng"
+  login:
+    error_login: "Tài khoản chưa tồn tại"
+    invalid_email_password_combination: "Sai mật khẩu"
+  category:
+    title: "Danh mục sách"
+    name: "Tên danh mục"
+    created_at: "Tạo lúc"
+    action: "Tính năng"

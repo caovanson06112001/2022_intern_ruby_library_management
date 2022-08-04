@@ -138,28 +138,20 @@
             <%= t "nav" %>
           </label>
         </li>
-        <li class="nav-item pcoded-hasmenu">
-          <a href="#" class="nav-link ">
+        <li class="nav-item">
+          <%= link_to admin_category_index_path, class:"nav-link" do %>
             <span class="pcoded-micon">
-              <i class="fa fa-tachometer"></i>
+              <i class="fas fa-book"></i>
             </span>
             <span class="pcoded-mtext">
-              <%= t "index" %>
+              <%= t "category.title" %>
             </span>
-          </a>
-          <ul class="pcoded-submenu">
-            <li>
-              <%= link_to t("page1"), "#" %>
-            </li>
-            <li>
-              <%= link_to t("page2"), "#" %>
-            </li>
-          </ul>
+          <% end %>
         </li>
         <li class="nav-item pcoded-hasmenu">
           <a href="#" class="nav-link ">
             <span class="pcoded-micon">
-              <i class="fa fa-address-book"></i>
+              <i class="fas fa-book"></i>
             </span>
             <span class="pcoded-mtext">
               <%= t "list_nav" %>
@@ -167,7 +159,7 @@
           </a>
           <ul class="pcoded-submenu">
             <li class="pcoded-hasmenu">
-              <%= link_to t("page1"), "#" %>
+              <%= link_to t("category.title"), admin_category_index_path %>
               <ul class="pcoded-submenu">
                 <li>
                   <%= link_to t("page1"), "#" %>

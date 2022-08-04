@@ -9,7 +9,7 @@ class Admin::SessionsController < ApplicationController
       params[:session][:remember_me] == "1" ? remember(@user) : forget(@user)
       redirect_to admin_home_path
     else
-      flash.now[:danger] = t "invalid_email_password_combination"
+      flash[:danger] = t "login.invalid_email_password_combination"
       redirect_to admin_login_path
     end
   end

@@ -21,5 +21,14 @@ en:
   remember_me: "Remember me"
   log_in: "Log In"
   forgot_password: "Forgot password?"
+  home: "Home"
   user_login:
     error_login: "invalid username or password"
+  login:
+    error_login: "email not found or password is invalid social club"
+    invalid_email_password_combination: "Email not found or password is invalid"
+  category:
+    title: "Category"
+    name: "Name"
+    created_at: "Created at"
+    action: "Action"
