@@ -54,14 +54,12 @@ ActiveRecord::Schema.define(version: 2022_08_02_030027) do
     t.string "description"
     t.string "publiser"
     t.integer "quantity"
-    t.bigint "user_id", null: false
     t.bigint "category_book_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "author_id"
     t.index ["category_book_id"], name: "index_books_on_category_book_id"
     t.index ["name"], name: "index_books_on_name"
-    t.index ["user_id"], name: "index_books_on_user_id"
   end
 
   create_table "category_books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -87,5 +85,4 @@ ActiveRecord::Schema.define(version: 2022_08_02_030027) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "books", "category_books"
-  add_foreign_key "books", "users"
 end

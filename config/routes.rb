@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       post "/login", to: "sessions#create"
       get "/register", to: "sessions#register"
       delete "/logout", to: "sessions#destroy"
+      resources :category
     end
   end
 end

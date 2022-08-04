@@ -14,3 +14,8 @@ User.create!(name: name,
   password_confirmation: password,
 )
 end
+
+99.times do |n|
+  name = "sach - #{n+1}"
+  CategoryBook.create!(name: name)
+end
