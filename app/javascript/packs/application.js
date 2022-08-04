@@ -9,10 +9,10 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 Rails.start()
+require("login/jquery-3.2.1.min")
+require("login/animsition.min")
+require("login/select2.min")
+require("admin/sweetalert2.all.min")
+require("login/main")
 Turbolinks.start()
 ActiveStorage.start()
-require("login/jquery-3.2.1.min.js")
-require("login/boostrap.js")
-require("login/animsition.min.js")
-require("login/select2.js")
-require("login/main.js")

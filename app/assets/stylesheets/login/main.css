@@ -549,4 +549,11 @@ iframe {
   background-image: url('bg-01.jpg');
 }
 
+.img-books{
+  width: 100%;
+  border-radius: 50%;
+}
 
+.alert_mess{
+  display: none;
+}

@@ -18,3 +18,8 @@ en:
   messages: "My Messages"
   english: "English"
   vietnamese: "Vietnamese"
+  remember_me: "Remember me"
+  log_in: "Log In"
+  forgot_password: "Forgot password?"
+  user_login:
+    error_login: "invalid username or password"
