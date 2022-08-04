@@ -15,5 +15,11 @@
         bs_placement: "top"}} do %>
       <i class="icon feather icon-edit f-16"></i>
     <% end %>
+    <%= link_to "javascript:void(0)",
+      {class: "btn btn-icon btn-danger delete_category",
+        data: { url: admin_category_path(category_book),
+        bs_placement: "top"}} do %>
+      <i class="icon feather icon-trash-2 f-16"></i>
+    <% end %>
   </td>
 </tr>

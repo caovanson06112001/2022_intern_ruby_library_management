@@ -6,12 +6,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "admin", media: "all", "data-turbolinks-track": "preload" %>
+    <%= stylesheet_link_tag "custom", media: "all", "data-turbolinks-track": "preload" %>
     <%= javascript_pack_tag "admin", "data-turbolinks-track": "reload" %>
   </head>
   <body>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %> alert_mess"><%= message %></div>
+    <% end %>
     <%= render "shares/nav" %>
     <%= render "shares/header" %>
     <%= yield %>
     <%= render "shares/footer" %>
   </body>
+  <script>
+    var language = "<%= I18n.locale %>";
+    window.I18n  = <%= current_translations.to_json.html_safe %>;
+  </script>
 </html>

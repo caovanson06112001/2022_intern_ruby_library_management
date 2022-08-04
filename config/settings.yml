@@ -6,6 +6,7 @@ user:
 book:
   min: 3
 category:
-  min: 3
+  min: 5
 author:
   min: 3
+max_page_category: 8
