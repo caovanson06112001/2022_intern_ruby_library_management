@@ -34,6 +34,20 @@ end
 
 39.times do |n|
   CategoryBook.create!(name: "sach - #{n+1}")
+  name = "sach - #{n+1}"
+  CategoryBook.create!(name: name)
+
+40.times do |n|
+  name = "Nguyen Van A#{n+1}"
+  description = "Vui tinh, Hoa dong, yeu thien nhien"
+  dob = Date.new(2000, 04, 18)
+  gender = 1
+  Author.create!(name: name,
+    description: description,
+    dob: dob,
+    gender: gender,
+  )
+
 end
 
 Book.destroy_all
