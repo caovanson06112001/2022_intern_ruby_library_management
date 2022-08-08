@@ -13,6 +13,8 @@ class User < ApplicationRecord
                        allow_nil: true
   has_secure_password
 
+  scope :latest_user, ->{order created_at: :desc}
+
   def remember
     self.remember_token = User.new_token
     update remember_digest: User.digest(remember_token)
@@ -20,6 +22,10 @@ class User < ApplicationRecord
 
   def forget
     update_attribute :remember_digest, nil
+  end
+
+  def activate_admin
+    update_columns admin: true
   end
 
   private

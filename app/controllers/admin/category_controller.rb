@@ -1,5 +1,4 @@
 class Admin::CategoryController < AdminController
-  before_action :logged_in_user
   before_action :find_category, except: %i(index new create)
 
   def index
@@ -42,24 +41,7 @@ class Admin::CategoryController < AdminController
 
   private
 
-  def find_category
-    @category = CategoryBook.find_by id: params[:id]
-    return if @category
-
-    store_location
-    redirect_to admin_category_index_path
-    flash[:danger] = t "category.find_error"
-  end
-
   def category_params
     params.require(:category_book).permit :name
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:message] = t "user_login.is_login"
-    redirect_to admin_login_path
   end
 end
