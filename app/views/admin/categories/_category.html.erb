@@ -1,15 +1,15 @@
 <tr>
   <td>
-    <%= category_book.id %>
+    <%= category.id %>
   </td>
   <td>
-    <%= category_book.name %>
+    <%= category.name %>
   </td>
   <td>
-    <%= category_book.created_at %>
+    <%= category.created_at %>
   </td>
   <td>
-    <%= link_to edit_admin_category_path(category_book),
+    <%= link_to edit_admin_category_path(category),
       {class: "btn btn-icon btn-success",
         data: { bs_toggles: "tooltip",
         bs_placement: "top"}} do %>
@@ -17,7 +17,7 @@
     <% end %>
     <%= link_to "javascript:void(0)",
       {class: "btn btn-icon btn-danger delete_category",
-        data: { url: admin_category_path(category_book),
+        data: { url: admin_category_path(category),
         bs_placement: "top"}} do %>
       <i class="icon feather icon-trash-2 f-16"></i>
     <% end %>
