@@ -1,0 +1,162 @@
+<div class="page-header page-header-0">
+  <div class="page-block">
+    <div class="row m-0">
+      <div class="col-lg-2 col-xl-2 col-xxl-2 menu-code p-0">
+        <div>
+          <button type="button" class="btn btn-primary w-100">
+            <%= t "category.title" %>
+          </button>
+        </div>
+        <ul class="category_menu">
+          <li>
+            <a href="">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 col-xxl-10 p-0">
+        <!-- banner -->
+        <div class="row w-100 m-0">
+          <div class=" col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9 p-0">
+            <div class="col-sm-12">
+              <div class="">
+                <div class="">
+                  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true">
+                      </li>
+                      <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class=""></li>
+                      <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2" class=""></li>
+                    </ol>
+                    <div class="carousel-inner carousel-inner-h">
+                      <div class="carousel-item active">
+                        <%= image_tag "banner1.webp", class: "img-fluid d-block w-100" %>
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <%= image_tag "banner2.jpg", class: "img-fluid d-block w-100" %>
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <%= image_tag "banner3.jpg", class: "img-fluid d-block w-100" %>
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleDark" role="button"
+                      data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span
+                        class="sr-only"></span></a>
+                    <a class="carousel-control-next" href="#carouselExampleDark" role="button"
+                      data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span
+                        class="sr-only"></span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-xl-3 col-xxl-3 p-0 menu-active">
+            <div>
+              <button type="button" class="btn btn-primary w-100">
+                <%= t "login_now" %>
+              </button>
+            </div>
+            <div class="flex flex-wrap justify-content-center m-10-0">
+              <a href="#" class="login100-social-item bg1">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="login100-social-item bg2">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="login100-social-item bg3">
+                <i class="fab fa-google"></i>
+              </a>
+            </div>
+            <div class="or">
+              <%= t "or" %>
+            </div>
+            <div class="flex justify-content-center">
+              <%= link_to t("log_in"), admin_login_path, class:"btn btn-outline-success login_menu" %>
+            </div>
+            <div class="flex justify-content-center">
+              <%= link_to t("sign_up"), "#", class:"btn btn-outline-danger login_menu" %>
+            </div>
+          </div>
+        </div>
+        <!-- end-banner -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+            <div class="row align-items-center item-r">
+              <div class="col-lg-6 col-xl-2 col-xxl-2">
+                <i class="fas fa-address-card text-danger text-30"></i>
+              </div>
+              <div class="col-lg-6 col-xl-10 col-xxl-10">
+                <h4 class="h4-19 text-danger l-06">
+                  <%= t "l_e" %>
+                </h4>
+                <div class="font-12">
+                  <%= t "l_e_c" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+            <div class="row align-items-center item-r">
+              <div class="col-lg-6 col-xl-2 col-xxl-2">
+                <i class="fas fa-laptop text-danger text-30"></i>
+              </div>
+              <div class="col-lg-6 col-xl-10 col-xxl-10">
+                <h4 class="h4-19 text-danger l-06">
+                  <%= t "r_b" %>
+                </h4>
+                <div class="font-12">
+                  <%= t "r_b_c" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+            <div class="row align-items-center item-r">
+              <div class="col-lg-6 col-xl-2 col-xxl-2">
+                <i class="fas fa-book-open text-danger text-30"></i>
+              </div>
+              <div class="col-lg-6 col-xl-10 col-xxl-10">
+                <h4 class="h4-19 text-danger l-06">
+                  <%= t "k_s" %>
+                </h4>
+                <div class="font-12">
+                  <%= t "k_s_c" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+            <div class="row align-items-center">
+              <div class="col-lg-6 col-xl-2 col-xxl-2">
+                <i class="fas fa-book text-danger text-30"></i>
+              </div>
+              <div class="col-lg-6 col-xl-10 col-xxl-10">
+                <h4 class="h4-19 text-danger l-06">
+                  <%= t "encry" %>
+                </h4>
+                <div class="font-12">
+                  <%= t "encry_c" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

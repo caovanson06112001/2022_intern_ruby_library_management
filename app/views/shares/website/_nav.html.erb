@@ -1,0 +1,79 @@
+<nav class="pcoded-navbar theme-horizontal menu-light brand-blue">
+  <div class="navbar-wrapper container">
+    <div class="navbar-content sidenav-horizontal active pcoded-trigger" id="layout-sidenav">
+      <ul class="nav pcoded-inner-navbar sidenav-inner" style="display: block;">
+        <li class="nav-item pcoded-hasmenu">
+          <%= link_to root_path,class: "nav-link" do %>
+            <span class="pcoded-micon">
+              <i class="feather icon-home"></i>
+            </span>
+            <span class="pcoded-mtext">
+              <%= t "index" %>
+            </span>
+          <% end %>
+          <div></div>
+        </li>
+        <li class="nav-item pcoded-hasmenu">
+          <%= link_to "#",class: "nav-link" do %>
+            <span class="pcoded-micon">
+              <i class="feather icon-layout"></i>
+            </span>
+            <span class="pcoded-mtext">
+              <%= t "category.title" %>
+            </span>
+          <% end %>
+          <ul class="pcoded-submenu" style="">
+            <li>
+              <%= link_to t("blog"), "#" %>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item pcoded-hasmenu">
+          <%= link_to "#",class: "nav-link" do %>
+            <span class="pcoded-micon">
+              <i class="feather icon-layers"></i>
+            </span>
+            <span class="pcoded-mtext">
+              <%= t "blog" %>
+            </span>
+          <% end %>
+          <ul class="pcoded-submenu" style="">
+            <li>
+              <%= link_to t("news.post1"), "#" %>
+            </li>
+            <li>
+              <%= link_to t("news.post2"), "#" %>
+            </li>
+            <li>
+              <%= link_to t("news.post3"), "#" %>
+            </li>
+            <li>
+              <%= link_to t("news.post4"), "#" %>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item pcoded-hasmenu">
+          <%= link_to "#",class: "nav-link" do %>
+            <span class="pcoded-micon">
+              <i class="feather icon-layers"></i>
+            </span>
+            <span class="pcoded-mtext">
+              <%= t "community" %>
+            </span>
+          <% end %>
+          <div></div>
+        </li>
+        <li class="nav-item">
+          <%= link_to "#", class: "nav-link" do %>
+            <span class="pcoded-micon">
+              <i class="feather icon-sidebar"></i>
+            </span>
+            <span class="pcoded-mtext">
+              <%= t "book_cart" %>
+            </span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

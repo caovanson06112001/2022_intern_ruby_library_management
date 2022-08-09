@@ -12,5 +12,9 @@ Rails.application.routes.draw do
       resources :books
       resources :authors
     end
+    scope module: "website" do
+      root "home#index"
+      get "/order", to: "order#index"
+    end
   end
 end
