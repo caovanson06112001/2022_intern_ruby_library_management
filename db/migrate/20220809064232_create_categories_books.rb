@@ -1,10 +1,8 @@
 class CreateCategoriesBooks < ActiveRecord::Migration[6.1]
   def change
-    create_table :categories_books do |t|
+    create_table :category_books do |t|
       t.references :book
-      t.references :category_book
-
-      t.timestamps
+      t.references :category
     end
   end
 end

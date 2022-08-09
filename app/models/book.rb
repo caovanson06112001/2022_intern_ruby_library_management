@@ -1,10 +1,16 @@
 class Book < ApplicationRecord
+  BOOK_PARAM = [:name, :image, :description,
+              :author_id, :publisher_id, :quantity,
+              {category_ids: [], category_books_attributes:
+              [:id, :book_id, :category_id]}].freeze
   belongs_to :author
   belongs_to :publisher
-  has_many :category_book, dependent: :destroy
-  has_many :category_books, through: :category_book
+  has_many :category_books, dependent: :destroy
+  has_many :categories, through: :category_books
+  has_many :order_details, dependent: :destroy
+  has_many :orders, through: :order_details
   has_one_attached :image
-  accepts_nested_attributes_for :category_books
+  accepts_nested_attributes_for :category_books, :order_details
 
   delegate :name, :dob, to: :author, prefix: true
   delegate :name, :description, to: :publisher, prefix: true

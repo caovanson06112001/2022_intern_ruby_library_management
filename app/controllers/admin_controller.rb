@@ -13,7 +13,7 @@ class AdminController < ApplicationController
   end
 
   def find_category
-    @category = CategoryBook.find_by id: params[:id]
+    @category = Category.find_by id: params[:id]
     return if @category
 
     store_location

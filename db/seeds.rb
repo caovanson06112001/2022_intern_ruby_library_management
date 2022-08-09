@@ -5,14 +5,6 @@ User.create!(name: "caoson",
   phone_number: "0338910238",
   admin: true)
 
-49.times do |n|
-  Author.create!(
-    name: Faker::Name.name,
-    description: Faker::Lorem.sentence(word_count: 20),
-    dob: Faker::Date.between(from: '2019-09-23', to: '2000-09-25')
-  )
-end
-
 59.times do |n|
   Publisher.create!(
     name: Faker::Book.title,
@@ -33,9 +25,9 @@ User.create!(
 end
 
 39.times do |n|
-  CategoryBook.create!(name: "sach - #{n+1}")
+  Category.create!(name: "sach - #{n+1}")
   name = "sach - #{n+1}"
-  CategoryBook.create!(name: name)
+end
 
 40.times do |n|
   name = "Nguyen Van A#{n+1}"
@@ -47,16 +39,23 @@ end
     dob: dob,
     gender: gender,
   )
-
 end
 
-Book.destroy_all
-39.times do |n|
-  Book.create!(
-    name: Faker::Book.title,
-    description: Faker::Lorem.sentence(word_count: 20),
-    quantity: 20,
-    author_id: Author.first.id,
-    publisher_id: Publisher.first.id
+4.times do |n|
+  day_start = Date.new(2000, 04, 18)
+  Order.create!(
+    day_start: day_start,
+    user_id: n+1,
+  )
+end
+
+4.times do |n|
+  date_end = Date.new(2000, 04, 18)
+  OrderDetail.create!(
+    date_end: date_end,
+    book_id: 3,
+    order_id: 1,
+    quantity: 123,
+    status: :approved
   )
 end

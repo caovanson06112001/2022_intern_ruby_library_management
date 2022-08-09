@@ -3,16 +3,16 @@ class Admin::CategoryController < AdminController
   before_action :find_category, except: %i(index new create)
 
   def index
-    @pagy, @categories = pagy CategoryBook.latest_category,
+    @pagy, @categories = pagy Category.latest_category,
                               items: Settings.max_page_category
   end
 
   def new
-    @category = CategoryBook.new
+    @category = Category.new
   end
 
   def create
-    @category = CategoryBook.new category_params
+    @category = Category.new category_params
     if @category.save
       flash[:message] = t "category.save"
       redirect_to admin_category_index_path
@@ -43,6 +43,6 @@ class Admin::CategoryController < AdminController
   private
 
   def category_params
-    params.require(:category_book).permit :name
+    params.require(:category).permit :name
   end
 end
