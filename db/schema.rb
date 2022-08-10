@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2022_08_09_064232) do
     t.date "dob"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "gender"
     t.index ["name"], name: "index_authors_on_name"
   end
 

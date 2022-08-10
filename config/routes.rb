@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :category
       resources :users
       resources :books, only: %i(index new)
+      resources :authors
     end
   end
 end
