@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="box-detail">
+      <div class="box-detail__item">
+        <strong><%= t "name" %>:</strong>
+        <span><%= @publisher.name %></span>
+      </div>
+      <div class="box-detail__item">
+        <strong><%= t "image" %>: </strong>
+        <div><%= image_tag @publisher.display_image %></div>
+      </div>
+      <div class="box-detail__item">
+        <strong><%= t "description" %>: </strong>
+        <span><%= @publisher.description %></span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -122,5 +122,22 @@ admin:
     update:
       updated: "Update author successfuly"
       updated_fails: "Update author faild"
-  publisher:
-    name: "Publisher"
+  publishers:
+    title: "Management Publishers"
+    not_found_publisher: "Not found publisher"
+    index:
+      publisher: "Publisher"
+      list_publisher: "List publisher"
+    show:
+      publisher_detail: "Detail publisher"
+      create_publisher: "Add new publisher"
+      update_publisher: "Edit publisher"
+    destroy:
+      deleted: "Delete publisher successfuly"
+      deleted_fails: "Delete publisher faild"
+    create:
+      created: "Create publisher successful"
+      created_fails: "Create publisher fail"
+    update:
+      updated: "Update publisher successfuly"
+      updated_fails: "Update publisher faild"

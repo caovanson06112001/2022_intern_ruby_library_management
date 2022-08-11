@@ -24,5 +24,8 @@ require("admin/sweetalert2.min")
 //= require tinymce
 require("admin/pcoded.min")
 require("admin/index.min")
+require("admin/author")
+require("admin/publisher")
+
 Turbolinks.start()
 ActiveStorage.start()

@@ -175,3 +175,36 @@
     }
   }
 }
+
+.box-detail{
+  padding: 1rem 2rem;
+
+  &__item {
+    margin-bottom: 1rem;
+
+    strong {
+      margin-right: 5px;
+    }
+  }
+
+  img {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+.publisher_image {
+  width: 120px;
+  height: 80px;
+}
+
+#publisher_image_preview {
+  text-align: center;
+
+  & > img {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    margin-bottom: 1rem;
+  }
+}

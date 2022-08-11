@@ -1,15 +1,17 @@
-class Admin::AuthorsController < ApplicationController
+class Admin::PublishersController < ApplicationController
   layout "admin"
 
   before_action :find_by_id, except: %i(new create index)
 
   def index
-    @pagy, @authors = pagy Author.latest,
-                           items: Settings.author.max_page
+    @pagy, @publishers = pagy Publisher.latest,
+                              items: Settings.publishers.max_page
   end
 
+  def show; end
+
   def new
-    @author = Author.new
+    @publisher = Publisher.new
     respond_to do |format|
       format.js do
         render :show_form, locals: {action: params[:action]}
@@ -18,11 +20,11 @@ class Admin::AuthorsController < ApplicationController
   end
 
   def create
-    @author = Author.new author_params
-    if @author.save
+    @publisher = Publisher.new publisher_params
+    if @publisher.save
       respond_to do |format|
-        @pagy, @authors = pagy Author.latest,
-                               items: Settings.author.max_page
+        @pagy, @publishers = pagy Publisher.latest,
+                                  items: Settings.publishers.max_page
 
         format.js do
           render :update, locals: {status: Settings.status.success,
@@ -35,8 +37,6 @@ class Admin::AuthorsController < ApplicationController
     end
   end
 
-  def show; end
-
   def edit
     respond_to do |format|
       format.js do
@@ -46,9 +46,9 @@ class Admin::AuthorsController < ApplicationController
   end
 
   def update
-    if @author.update author_params
-      @pagy, @authors = pagy Author.latest,
-                             items: Settings.author.max_page
+    if @publisher.update publisher_params
+      @pagy, @publishers = pagy Publisher.latest,
+                                items: Settings.publishers.max_page
       respond_to do |format|
         format.js do
           render :update, locals: {status: Settings.status.success,
@@ -62,7 +62,7 @@ class Admin::AuthorsController < ApplicationController
   end
 
   def destroy
-    if @author.destroy
+    if @publisher.destroy
       render json: {message: t(".deleted"), code: Settings.status.success}
     else
       render json: {message: t(".deleted_fails"),
@@ -73,14 +73,14 @@ class Admin::AuthorsController < ApplicationController
   private
 
   def find_by_id
-    @author = Author.find_by id: params[:id]
-    return if @author
+    @publisher = Publisher.find_by id: params[:id]
+    return if @publisher
 
-    flash[:danger] = t ".not_found_author"
-    redirect_to admin_author_path
+    flash[:danger] = t "admin.publishers.not_found_publisher"
+    redirect_to admin_publisher_path
   end
 
-  def author_params
-    params.require(:author).permit Author::FIELD_PERMIT
+  def publisher_params
+    params.require(:publisher).permit Publisher::FIELD_PERMIT
   end
 end
