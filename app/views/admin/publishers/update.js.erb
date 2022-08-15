@@ -1,0 +1,16 @@
+<% if @publisher.errors.any? %>
+  toastr.error("<%= @publisher.errors.first.full_message %>", "", {"closeButton": true})
+<% else %>
+  <% if status === Settings.status.success %>
+    $("#contentTablePublisher").html("<%= j render @publishers %>")
+    if("<%= action === 'create' %>" === "true"){
+      $("#pagyPublisher").html("<%== j pagy_nav @pagy %>")
+      toastr.success(I18n.admin.publishers.create.created, "", {"closeButton": true})
+    }else{
+      toastr.success(I18n.admin.publishers.update.updated, "", {"closeButton": true})
+    }
+  <% else %>
+    toastr.error("<%= t 'error' %>", "", {"closeButton": true})
+  <% end %>
+  $("#modalLive").modal("hide")
+<% end %>

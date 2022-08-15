@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_12_071134) do
+ActiveRecord::Schema.define(version: 2022_08_10_171823) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -53,34 +53,39 @@ ActiveRecord::Schema.define(version: 2022_08_12_071134) do
   create_table "books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", size: :long
+    t.string "publiser"
     t.integer "quantity"
+    t.bigint "category_book_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "author_id"
     t.integer "publisher_id"
+    t.index ["category_book_id"], name: "index_books_on_category_book_id"
     t.index ["name"], name: "index_books_on_name"
   end
 
-  create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name", null: false
+  create_table "categories_books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "book_id"
+    t.bigint "category_book_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_categories_on_name"
+    t.index ["book_id"], name: "index_categories_books_on_book_id"
+    t.index ["category_book_id"], name: "index_categories_books_on_category_book_id"
   end
 
   create_table "category_books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "book_id"
-    t.bigint "category_id"
-    t.index ["book_id"], name: "index_category_books_on_book_id"
-    t.index ["category_id"], name: "index_category_books_on_category_id"
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_category_books_on_name"
   end
 
   create_table "order_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "order_id"
-    t.bigint "book_id"
-    t.integer "quantity"
+    t.bigint "order_id", null: false
+    t.bigint "book_id", null: false
     t.integer "status"
-    t.date "date_end"
+    t.integer "quantity"
+    t.integer "quantity_real"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_order_details_on_book_id"
@@ -88,8 +93,12 @@ ActiveRecord::Schema.define(version: 2022_08_12_071134) do
   end
 
   create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.date "day_start"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
+    t.integer "approval"
+    t.text "note_user"
+    t.text "note_admin"
+    t.datetime "date_start"
+    t.datetime "date_return"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
@@ -118,4 +127,8 @@ ActiveRecord::Schema.define(version: 2022_08_12_071134) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "books", "category_books"
+  add_foreign_key "order_details", "books"
+  add_foreign_key "order_details", "orders"
+  add_foreign_key "orders", "users"
 end

@@ -1,0 +1,24 @@
+<%= form_for([:admin, @publisher], id: "publisher_form", remote: true) do |f| %>
+  <div class="card mb-0">
+    <div class="card-body">
+      <div class="mb-4">
+        <%= f.label :name, t("name"), { class: "form-label text-bold" } %>
+        <%= f.text_field :name, { class: "form-control" , placeholder: t("name") } %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :image, t("image"), { class: "form-label text-bold" } %>
+        <div id="publisher_image_preview">
+          <%= image_tag f.object.image.attached? ? f.object.image : Settings.publishers.avatar_default %>
+        </div>
+        <%= f.file_field :image, accept: Settings.publishers.image_accept, class: "form-control" %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :description, t("description"), { class: "form-label text-bold" } %>
+        <%= f.text_area :description, class: "form-control", rows: 4 , placeholder: t("description") %>
+      </div>
+      <%= f.submit t("submit") , class: "btn btn-primary btn-submit-publisher" %>
+    </div>
+  </div>
+<% end %>
