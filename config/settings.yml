@@ -22,8 +22,14 @@ gender:
   other: "other"
 max_page_category: 8
 max_page_user: 8
-publisers:
+publishers:
+  max_page: 4
   min: 3
+  avatar_default: "default/publisher_img_default.jpg"
+  image_type: ["image/jpeg", "image/gif", "image/png"]
+  image_size: 5
+  image_resize: [200, 200]
+  image_accept: "image/jpeg, image/gif, image/png"
 status:
   success: 200
   internal_server_error: 500
