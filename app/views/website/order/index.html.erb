@@ -1,0 +1,67 @@
+<% provide :title, t("home.search") %>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-header page-header-0">
+      <div class="card-header">
+        <div>
+          <a class="btn btn-danger">
+            <%= t "cart_book" %>
+            <span class="badge bg-secondary">4</span>
+          </a>
+          <a class="btn btn-warning">
+            <%= t "my_lib" %>
+          </a>
+          <a class="btn btn-success">
+            <%= t "book_app" %>
+          </a>
+          <a class="btn btn-primary">
+            <%= t "book_f" %>
+          </a>
+        </div>
+        <hr>
+        <div class="dt-responsive table-responsive user-profile-list">
+          <table id="user-list-table" class="table nowrap">
+            <thead>
+              <tr>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="d-inline-block align-middle">
+                    <img src="../assets/images/user/avatar-5.jpg" alt="user image" class="img-radius align-top m-r-15"
+                      style="width:40px;">
+                    <div class="d-inline-block">
+                      <h6 class="m-b-0"></h6>
+                      <p class="m-b-0"></p>
+                    </div>
+                  </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <span class="badge bg-danger"></span>
+                  <div class="overlay-edit">
+                    <button type="button" class="btn btn-icon btn-success">
+                      <i class="feather icon-check-circle"></i>
+                    </button>
+                    <button type="button" class="btn btn-icon btn-danger">
+                      <i class="feather icon-trash-2"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,7 +7,7 @@ class Admin::SessionsController < ApplicationController
     if @user.authenticate(params[:session][:password])
       log_in @user
       params[:session][:remember_me] == "1" ? remember(@user) : forget(@user)
-      redirect_to admin_home_path
+      redirect_login
     else
       flash[:danger] = t "login.invalid_email_password_combination"
       redirect_to admin_login_path
@@ -27,5 +27,11 @@ class Admin::SessionsController < ApplicationController
 
     flash[:danger] = t "login.error_login"
     redirect_to admin_login_path
+  end
+
+  def redirect_login
+    redirect_to admin_home_path if @user.admin
+
+    redirect_to root_path
   end
 end

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "website", media: "all", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_link_tag "custom", media: "all", "data-turbolinks-track": "preload" %>
+    <%= javascript_pack_tag "website", "data-turbolinks-track": "reload" %>
+    <%= tinymce_assets %>
+  </head>
+
+  <body>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %> alert_mess"><%= message %></div>
+    <% end %>
+    <%= render "shares/website/nav"%>
+    <%= render "shares/website/header"%>
+    <div class="pcoded-main-container p-0">
+      <div class="pcoded-wrapper container">
+        <div class="pcoded-content-body">
+          <div class="pcoded-inner-content">
+            <div class="main-body">
+              <div class="page-wrapper">
+                <%= yield %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render "shares/website/footer"%>
+  </body>
+  <script>
+    var language = "<%= I18n.locale %>";
+    window.I18n  = <%= current_translations.to_json.html_safe %>;
+    $('.select2_min').select2()
+  </script>
+</html>

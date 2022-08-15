@@ -1,0 +1,131 @@
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<header class="navbar pcoded-header navbar-expand-lg navbar-light headerpos-fixed header-blue">
+  <div class="m-header">
+    <%= link_to "#", class:"mobile-menu", id:"mobile-collapse" do %>
+      <span></span>>
+    <% end %>
+    <%= link_to "#", class:"b-brand" do %>
+      <%= image_tag "logo.png", alt: "Rails logo", class: "logo" %>
+      <%= image_tag "logo-icon.png", alt: "Rails logo", class: "logo-thumb" %>
+    <% end %>
+    <%= link_to "#", class:"mob-toggler" do %>
+      <i class="fa fa-address-book" aria-hidden="true"></i>
+    <% end %>
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <%= link_to "#", class:"pop-search" do %>
+          <i class="feather icon-search"></i>
+        <% end %>
+        <div class="search-bar">
+          <input type="text" class="form-control border-0 shadow-none" placeholder="Search here">
+          <button type="button" class="btn-close" aria-label="Close">
+          </button>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="full-screen" onclick="javascript:toggleFullScreen()">
+          <i class="feather icon-maximize"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ms-auto">
+      <li>
+        <div class="dropdown">
+          <a class="dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            <i class="icon feather icon-bell"></i>
+            <span class="badge bg-danger"><span class="sr-only"></span></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end notification">
+            <div class="noti-head">
+              <h6 class="d-inline-block m-b-0">
+                <%= t "notifications" %>
+              </h6>
+              <div class="float-end">
+                <%= link_to t("mark_as_read"), "#" %>
+                <%= link_to t("clear_all"), "#" %>
+              </div>
+            </div>
+            <div class="noti-footer">
+              <%= link_to t("show_all"), "#" %>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="dropdown">
+          <%= link_to "#", class:"displayChatbox dropdown-toggle" do %>
+            <i class="icon feather icon-mail"></i>
+            <span class="badge bg-success">
+              <span class="sr-only"></span>
+            </span>
+          <% end %>
+        </div>
+      </li>
+      <% if current_user.admin? %>
+      <li>
+        <div class="dropdown drp-user">
+          <a data-bs-toggle="dropdown" class="dropdown-toggle">
+            <%= image_tag "user/avatar.png", alt: "user", class: "img-radius wid-40" %>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end profile-notification">
+            <div class="pro-head">
+              <%= image_tag "user/avatar.png", alt: "user", class: "img-radius wid-40" %>
+              <span>John Doe</span>
+              <%= link_to admin_logout_path, class:"dud-logout", method: "delete" do %>
+                <i class="feather icon-log-out"></i>
+              <% end %>
+            </div>
+            <ul class="pro-body">
+              <li>
+                <%= link_to "#", class:"dropdown-item" do %>
+                  <i class="feather icon-user"></i> <%= t "profile" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#", class:"dropdown-item" do %>
+                  <i class="feather icon-mail"></i> <%= t "messages" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#", class:"dropdown-item" do %>
+                  <i class="feather icon-lock"></i> <%= t "lock_screen" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to options = {locale: :en}, class:"dropdown-item" do %>
+                  <i class="feather icon-lock"></i> <%= t "english" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to options ={locale: :vi} , class:"dropdown-item" do %>
+                  <i class="feather icon-lock"></i> <%= t "vietnamese" %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <% else %>
+      <li>
+        <div>
+          <%= link_to admin_login_path, class:"btn btn-shadow btn-success" do %>
+            <i class="fas fa-user-tie"></i> <%= t "log_in" %>
+          <% end %>
+          <%= link_to "", class:"btn btn-danger" do %>
+            <i class="fas fa-sign-in-alt"></i> <%= t "sign_up" %>
+          <% end %>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</header>
+<section class="header-user-list">
+  <a href="#" class="h-close-text"><i class="feather icon-x"></i></a>
+</section>
