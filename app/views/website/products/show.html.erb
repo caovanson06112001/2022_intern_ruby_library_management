@@ -6,14 +6,14 @@
       <div class="row">
         <div class="col- col-sm- col-md- col-lg- col-xl-3 col-xxl-3">
           <div>
-            <%= image_tag "banner1.webp", class: "w-100" %>
+            <%= image_tag @book.image, class: "w-100" %>
           </div>
         </div>
         <div class="col- col-sm- col-md- col-lg- col-xl-7 col-xxl-7">
           <div>
-            <h3>
-              <%= t "books.name" %>
-            </h3>
+            <h2>
+              <%= @book.name %>
+            </h2>
           </div>
           <div class="m1">
             <span class="dt">
@@ -36,28 +36,37 @@
             </span>
           </div>
           <div class="mt-20">
+            <strong>
+              <%= t "website.products.category_name" %> :
+            </strong>
             <span>
+              <% @category_books.each do |category| %>
+                <%= category.category_name %> |
+              <% end %>
+            </span>
+          </div>
+          <div class="mt-10">
+            <strong>
               <%= t "author_name" %> :
-            </span>
+            </strong>
             <span>
+              <%= @book.author_name %>
             </span>
           </div>
-          <div>
-            <span>
+          <div class="mt-10">
+            <strong>
               <%= t "publisher_name" %> :
-            </span>
+            </strong>
             <span>
+              <%= @book.publisher_name %>
             </span>
           </div>
-          <div class="wo">
-            <input type="date" name="" class="datepicker-input form-control w-400">
-          </div>
-          <div class="flex">
+          <div class="flex mt-20">
             <div class="minus">
               <i class="fas fa-minus"></i>
             </div>
             <div>
-              <input type="text" class="input-30">
+              <input type="text" min="1" max="5" value="1" class="input-30">
             </div>
             <div class="plus">
               <i class="fas fa-plus"></i>
@@ -86,6 +95,7 @@
         </h4>
         <hr>
         <div class="col-sm-9">
+          <%= sanitize @book.description %>
         </div>
       </div>
     </div>

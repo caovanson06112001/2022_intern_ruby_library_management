@@ -30,7 +30,7 @@ class Admin::SessionsController < ApplicationController
   end
 
   def redirect_login
-    redirect_to admin_home_path if @user.admin
+    return redirect_to admin_home_path if @user.admin
 
     redirect_to root_path
   end
