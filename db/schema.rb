@@ -61,8 +61,9 @@ ActiveRecord::Schema.define(version: 2022_08_16_012410) do
     t.index ["name"], name: "index_books_on_name"
   end
 
-  create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name", null: false
+  create_table "categories_books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "book_id"
+    t.bigint "category_book_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_categories_books_on_book_id"
@@ -90,7 +91,7 @@ ActiveRecord::Schema.define(version: 2022_08_16_012410) do
 
   create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "approval"
+    t.integer "status"
     t.text "note_user"
     t.text "note_admin"
     t.datetime "date_start"
@@ -123,7 +124,6 @@ ActiveRecord::Schema.define(version: 2022_08_16_012410) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "books", "category_books"
   add_foreign_key "order_details", "books"
   add_foreign_key "order_details", "orders"
   add_foreign_key "orders", "users"
