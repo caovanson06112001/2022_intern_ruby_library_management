@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     scope module: "website" do
       root "home#index"
       get "/order", to: "order#index"
+      get "/product/:id", to: "products#show"
     end
   end
 end
