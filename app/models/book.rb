@@ -32,4 +32,15 @@ class Book < ApplicationRecord
     select "books.*,order_details.quantity,
             order_details.status,order_details.quantity_real"
   end)
+  scope :search_book_name, (lambda do |name|
+    where("name LIKE ?", "%#{name}%") if name.present?
+  end)
+  scope :search_category, (lambda do |category|
+    if category.present?
+      joins(:category_books).where("category_books.category_id=?", category)
+    end
+  end)
+  scope :search_author, (lambda do |author|
+    where(author_id: author) if author.present?
+  end)
 end

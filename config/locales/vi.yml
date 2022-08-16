@@ -76,8 +76,12 @@ vi:
   reset_cart: "Đã đặt lại giỏ hàng."
   mess: "Thông báo"
   go_library: "Thư viện của tôi"
+  result_search: "Kết quả tìm kiếm"
+  enter_book_name: "Nhập tên sách các bạn muốn tìm ..."
   order_detail:
     name: "Mượn sách"
+  choose_category: "Chọn danh mục muốn tìm kiếm"
+  choose_author: "Chọn tác giả muốn tìm kiếm"
   news:
     post1: "Tin Tức"
     post2: "Sự kiện"
