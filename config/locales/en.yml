@@ -69,6 +69,8 @@ en:
   reviews: "450 reviews"
   author_name: "Author"
   publisher_name: "Publisher"
+  detail: "Detail"
+  add_cart: "Add to cart"
   news:
     post1: "New blog"
     post2: "Even"

@@ -70,6 +70,8 @@ vi:
   reviews: "450 đánh giá"
   author_name: "Tác Giả"
   publisher_name: "Nhà xuất bản"
+  detail: "Chi Tiết"
+  add_cart: "Thêm vào giỏ"
   news:
     post1: "Tin Tức"
     post2: "Sự kiện"
