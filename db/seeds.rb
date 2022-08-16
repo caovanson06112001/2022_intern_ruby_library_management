@@ -41,21 +41,21 @@ end
   )
 end
 
-# 4.times do |n|
-#   day_start = Date.new(2000, 04, 18)
-#   Order.create!(
-#     day_start: day_start,
-#     user_id: n+1,
-#   )
-# end
+4.times do |n|
+  day_start = Date.new(2000, 04, 18)
+  Order.create!(
+    day_start: day_start,
+    user_id: n+1,
+  )
+end
 
-# 4.times do |n|
-#   date_end = Date.new(2000, 04, 18)
-#   OrderDetail.create!(
-#     date_end: date_end,
-#     book_id: 3,
-#     order_id: 1,
-#     quantity: 123,
-#     status: :approved
-#   )
-# end
+4.times do |n|
+  date_end = Date.new(2000, 04, 18)
+  OrderDetail.create!(
+    date_end: date_end,
+    book_id: 3,
+    order_id: 1,
+    quantity: 123,
+    status: :approved
+  )
+end

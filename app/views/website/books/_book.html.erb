@@ -1,0 +1,49 @@
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2-4 item-code">
+  <div class="card">
+    <div class="card-header p-10">
+      <div class="img-scroll">
+        <a href="#">
+          <%= image_tag book.image, class: "w-100" %>
+        </a>
+      </div>
+      <div class="demo">
+        <div class="flex">
+          <div class="f50 r">
+            <%= link_to t("detail"), "#" %>
+          </div>
+          <div class="f50 g">
+            <%= link_to t("add_cart"), "#" %>
+          </div>
+        </div>
+      </div>
+      <div class="div-w">
+        <div>
+
+        </div>
+        <div class="margin-4">
+          <h5>
+            <a href="#" class="c-b">
+              <%= book.name %>
+            </a>
+          </h5>
+        </div>
+      </div>
+      <hr>
+      <div class="flex align-items-center justify-content-between">
+        <div>
+          <div class="d-l user-av">
+            <%= image_tag "avanta.png" %>
+          </div>
+          <div class="d-l">
+            <%= book.author_name %>
+          </div>
+        </div>
+        <div>
+          <a href="#" class="download-code">
+            <i class="fas fa-heart"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
