@@ -1,0 +1,33 @@
+<tr>
+  <td>
+    <div class="d-inline-block align-middle">
+      <%= image_tag book.image ,class: "align-top m-r-15 w-66" %>
+      <div class="d-inline-block">
+        <h6 class="m-b-0"></h6>
+        <p class="m-b-0"></p>
+      </div>
+    </div>
+  </td>
+  <td>
+    <%= book.name %>
+  </td>
+  <td>
+    <%= book.author_name %>
+  </td>
+  <td>
+    <%= book.publisher_name %>
+  </td>
+  <td>
+    <span class="badge bg-danger">
+      <%= t "not_order" %>
+    </span>
+    <div class="overlay-edit">
+      <%= link_to "#", {class:"btn btn-icon btn-success", data: {bs_toggle: "modal", bs_target: "#exampleModalToggle"}} do %>
+        <i class="feather icon-check-circle"></i>
+      <% end %>
+      <%= link_to order_path(book), class:"btn btn-icon btn-danger", method: "DELETE" do %>
+        <i class="feather icon-trash-2"></i>
+      <% end %>
+    </div>
+  </td>
+</tr>

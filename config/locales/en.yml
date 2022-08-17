@@ -160,8 +160,13 @@ en:
   submit: "Submit"
   action: "Action"
   image: "Image"
+  status: "Status"
+  not_order: "Cart"
   user_login:
     error_login: "invalid username or password"
+  order:
+    index: "Order all"
+    delete_all: "Reset cart"
 admin:
   authors:
     index:

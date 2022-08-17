@@ -7,7 +7,9 @@
         <div>
           <a class="btn btn-danger">
             <%= t "cart_book" %>
-            <span class="badge bg-secondary">4</span>
+            <span class="badge bg-secondary">
+              <%= session_book.nil? ? "0" : count_book %>
+            </span>
           </a>
           <a class="btn btn-warning">
             <%= t "my_lib" %>
@@ -24,44 +26,57 @@
           <table id="user-list-table" class="table nowrap">
             <thead>
               <tr>
+                <th>
+                  <%= t("books.image") %>
+                </th>
+                <th>
+                  <%= t("books.name") %>
+                </th>
+                <th>
+                  <%= t("books.author") %>
+                </th>
+                <th>
+                  <%= t("books.publiser") %>
+                </th>
+                <th>
+                  <%= t("status") %>
+                </th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <div class="d-inline-block align-middle">
-                    <img src="../assets/images/user/avatar-5.jpg" alt="user image" class="img-radius align-top m-r-15"
-                      style="width:40px;">
-                    <div class="d-inline-block">
-                      <h6 class="m-b-0"></h6>
-                      <p class="m-b-0"></p>
-                    </div>
-                  </div>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <span class="badge bg-danger"></span>
-                  <div class="overlay-edit">
-                    <button type="button" class="btn btn-icon btn-success">
-                      <i class="feather icon-check-circle"></i>
-                    </button>
-                    <button type="button" class="btn btn-icon btn-danger">
-                      <i class="feather icon-trash-2"></i>
-                    </button>
-                  </div>
-                </td>
-              </tr>
+              <%= render partial: "website/books/cart", collection: @books, as: :book %>
             </tbody>
             <tfoot>
               <tr>
+                <th>
+                  <%= t("books.image") %>
+                </th>
+                <th>
+                  <%= t("books.name") %>
+                </th>
+                <th>
+                  <%= t("books.author") %>
+                </th>
+                <th>
+                  <%= t("books.publiser") %>
+                </th>
+                <th>
+                  <%= t("status") %>
+                </th>
               </tr>
             </tfoot>
           </table>
+        </div>
+        <div class="order_book">
+          <%= link_to "#", class:"btn btn-success" do %>
+            <i class="feather me-2 icon-check-circle"></i> <%= t "order.index" %>
+          <% end %>
+          <%= link_to reset_cart_path, class:"btn btn-danger", method: "DELETE" do %>
+            <i class="feather me-2 icon-slash"></i> <%= t "order.delete_all" %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+<%= render "website/order/modal" %>

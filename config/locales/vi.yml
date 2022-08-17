@@ -162,8 +162,13 @@ vi:
   submit: "Gửi"
   action: "Hành động"
   image: "Ảnh"
+  status: "Trạng thái"
+  not_order: "Chưa đặt"
   user_login:
     error_login: "Tên đăng nhập hoặc mật khẩu không đúng"
+  order:
+    index: "Mượn sách"
+    delete_all: "Xoá giỏ sách"
   website:
     products:
       not_found_book: "Không tìm thấy sách"
