@@ -24,7 +24,6 @@ en:
   forgot_password: "Forgot password?"
   home: "Home"
   add: "Add"
-  admin: "Admin"
   action: "Action"
   book_cart: "Cart"
   community: "Community"
@@ -78,6 +77,7 @@ en:
   login: "You need log in to order books"
   mess: "Notify"
   go_library: "Return library"
+  manager: "Manager"
   order_detail:
     name: "Order books"
     quantity: "Amount borrowed"
@@ -165,10 +165,6 @@ en:
     delete_faild: "Delete a book faild"
     error_update: "Update a book faild"
     order_approved: "Delete a book faild"
-    code: "Code order"
-    date_start: "Date order"
-    date_return: "Date return"
-    created_at: "Created at"
   close: "Close"
   male: "Male"
   female: "Female"
@@ -190,9 +186,8 @@ en:
     error_order: "Please select at least 1 book to order"
     text_box: "Enter borrow information"
     success: "Created a request to borrow a book"
-    pending: "Pending"
-    approved: "Approved"
-    returned: "Returned"
+    delete_ss: "Book removed"
+    save: "Book added to cart"
 admin:
   authors:
     index:
@@ -227,3 +222,5 @@ admin:
     update:
       updated: "Update publisher successfuly"
       updated_fails: "Update publisher faild"
+  post:
+    index: "Posts"

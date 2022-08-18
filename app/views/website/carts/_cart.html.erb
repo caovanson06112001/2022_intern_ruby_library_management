@@ -17,8 +17,11 @@
       <span class="badge bg-danger"><%= t "order.returned" %></span>
     <% end%>
     <div class="overlay-edit">
-      <%= link_to cart_path(order), class:"btn btn-icon btn-danger", method: "DELETE" do %>
-        <i class="feather icon-trash-2"></i>
+      <%= link_to "javascript:void(0)", {class:"w-35 btn-icon btn-warning", data: {url:cart_path(order)}} do %>
+        <i class="fas fa-eye"></i>
+      <% end %>
+      <%= link_to cart_path(order), class:"w-35 btn-icon btn-danger", method: "DELETE" do %>
+        <i class="fas fa-calendar-times"></i>
       <% end %>
     </div>
   </td>
