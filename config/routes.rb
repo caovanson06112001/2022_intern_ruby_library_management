@@ -16,7 +16,8 @@ Rails.application.routes.draw do
       root "home#index"
       get "/product/:id", to: "products#show"
       delete "/reset_cart", to: "order#delete_all_cart"
-      resources :order
+      resources :order, :carts
     end
+    get "/login", to: "admin/sessions#new"
   end
 end

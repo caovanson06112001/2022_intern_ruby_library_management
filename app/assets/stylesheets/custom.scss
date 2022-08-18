@@ -219,3 +219,25 @@
     height: 50px!important;
   }
 }
+
+.m-b-10 {
+  margin-bottom: 10px;
+}
+
+.modal-book-blue {
+  background: linear-gradient(to right, $blue1, $blue2);
+}
+
+.book_name{
+  margin-left: 10px;
+}
+
+.quantity {
+  text-align: center;
+  margin: 5px 0;
+  border: 1px solid blue;
+}
+
+#modal_none {
+  display: none;
+}

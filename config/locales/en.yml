@@ -71,6 +71,19 @@ en:
   publisher_name: "Publisher"
   detail: "Detail"
   add_cart: "Add to cart"
+  reset_cart: "Reset cart successfuly."
+  submit: "Submit"
+  close: "Close"
+  need: "Need"
+  login: "You need log in to order books"
+  mess: "Notify"
+  go_library: "Return library"
+  order_detail:
+    name: "Order books"
+    quantity: "Amount borrowed"
+    date_start: "Date start"
+    date_end: "Date end"
+    note_user: "Note"
   news:
     post1: "New blog"
     post2: "Even"
@@ -88,6 +101,9 @@ en:
     cancel: "Cancel"
     yes_delete: "Yes , Delete it!"
     delete_icon: "Deleted!"
+    input: "Please enter the full information"
+    start_end: "Borrowing date must be greater than repayment date"
+    input_start: "Borrowed date must be greater than current date"
   user_login:
     error_login: "invalid username or password"
     is_login: "You need to login"
@@ -149,6 +165,10 @@ en:
     delete_faild: "Delete a book faild"
     error_update: "Update a book faild"
     order_approved: "Delete a book faild"
+    code: "Code order"
+    date_start: "Date order"
+    date_return: "Date return"
+    created_at: "Created at"
   close: "Close"
   male: "Male"
   female: "Female"
@@ -167,6 +187,12 @@ en:
   order:
     index: "Order all"
     delete_all: "Reset cart"
+    error_order: "Please select at least 1 book to order"
+    text_box: "Enter borrow information"
+    success: "Created a request to borrow a book"
+    pending: "Pending"
+    approved: "Approved"
+    returned: "Returned"
 admin:
   authors:
     index:

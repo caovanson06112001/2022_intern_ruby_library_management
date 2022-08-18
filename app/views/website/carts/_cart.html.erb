@@ -1,0 +1,25 @@
+<tr>
+  <td>
+    <%= order.date_start.strftime("%d-%m-%Y") %>
+  </td>
+  <td>
+    <%= order.date_return.strftime("%d-%m-%Y") %>
+  </td>
+  <td>
+    <%= order.created_at.strftime("%H:%M:%S | %d-%m-%Y") %>
+  </td>
+  <td>
+    <% if order.pending? %>
+      <span class="badge bg-warning"><%= t "order.pending" %></span>
+    <% elsif order.approved? %>
+      <span class="badge bg-success"><%= t "order.approved" %></span>
+    <% else %>
+      <span class="badge bg-danger"><%= t "order.returned" %></span>
+    <% end%>
+    <div class="overlay-edit">
+      <%= link_to cart_path(order), class:"btn btn-icon btn-danger", method: "DELETE" do %>
+        <i class="feather icon-trash-2"></i>
+      <% end %>
+    </div>
+  </td>
+</tr>

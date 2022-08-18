@@ -5,15 +5,15 @@
     <div class="page-header page-header-0">
       <div class="card-header">
         <div>
-          <a class="btn btn-danger">
+          <%= link_to order_index_path, class:"btn btn-danger" do %>
             <%= t "cart_book" %>
-            <span class="badge bg-secondary">
+            <span class="badge bg-secondary count_book">
               <%= session_book.nil? ? "0" : count_book %>
             </span>
-          </a>
-          <a class="btn btn-warning">
+          <% end %>
+          <%= link_to carts_path, class:"btn btn-warning" do %>
             <%= t "my_lib" %>
-          </a>
+          <% end %>
           <a class="btn btn-success">
             <%= t "book_app" %>
           </a>
@@ -27,51 +27,66 @@
             <thead>
               <tr>
                 <th>
-                  <%= t("books.image") %>
+                  <input class="form-check-input input-danger toggle_check" type="checkbox" id="check_book">
                 </th>
                 <th>
-                  <%= t("books.name") %>
+                  <%= t "books.image" %>
                 </th>
                 <th>
-                  <%= t("books.author") %>
+                  <%= t "books.name" %>
                 </th>
                 <th>
-                  <%= t("books.publiser") %>
+                  <%= t "books.author" %>
                 </th>
                 <th>
-                  <%= t("status") %>
+                  <%= t "order.quantity" %>
+                </th>
+                <th>
+                  <%= t "status" %>
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="table_book" id="table_book">
               <%= render partial: "website/books/cart", collection: @books, as: :book %>
             </tbody>
             <tfoot>
               <tr>
                 <th>
-                  <%= t("books.image") %>
+                  <input class="form-check-input input-danger toggle_check" type="checkbox" id="check_book">
                 </th>
                 <th>
-                  <%= t("books.name") %>
+                  <%= t "books.image" %>
                 </th>
                 <th>
-                  <%= t("books.author") %>
+                  <%= t "books.name" %>
                 </th>
                 <th>
-                  <%= t("books.publiser") %>
+                  <%= t "books.author" %>
                 </th>
                 <th>
-                  <%= t("status") %>
+                  <%= t "order.quantity" %>
+                </th>
+                <th>
+                  <%= t "status" %>
                 </th>
               </tr>
             </tfoot>
           </table>
         </div>
         <div class="order_book">
-          <%= link_to "#", class:"btn btn-success" do %>
-            <i class="feather me-2 icon-check-circle"></i> <%= t "order.index" %>
+          <button data-bs-toggle="modal" id="modal_none" data-bs-target="#exampleModalToggle">hrllo</button>
+          <% if logged_in? %>
+            <%= link_to "javascript:void(0)", {class:"btn btn-success order",
+            data: {bs_toggle: "", bs_target: "#exampleModalToggle", user_id: current_user.id, url_order_user: carts_path}} do %>
+              <i class="feather me-2 icon-check-circle"></i> <%= t "order.index" %>
+            <% end %>
+          <% else %>
+            <%= link_to "javascript:void(0)", {class:"btn btn-success order",
+            data: {login: "not_login", url: login_path}} do %>
+              <i class="feather me-2 icon-check-circle"></i> <%= t "order.index" %>
+            <% end %>
           <% end %>
-          <%= link_to reset_cart_path, class:"btn btn-danger", method: "DELETE" do %>
+          <%= link_to reset_cart_path, class:"btn btn-danger btn-reset-cart", method: "DELETE" do %>
             <i class="feather me-2 icon-slash"></i> <%= t "order.delete_all" %>
           <% end %>
         </div>
@@ -80,3 +95,6 @@
   </div>
 </div>
 <%= render "website/order/modal" %>
+<script>
+
+</script>
