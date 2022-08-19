@@ -2,7 +2,7 @@
   <div class="navbar-wrapper container">
     <div class="navbar-content sidenav-horizontal active pcoded-trigger" id="layout-sidenav">
       <ul class="nav pcoded-inner-navbar sidenav-inner" style="display: block;">
-        <li class="nav-item pcoded-hasmenu">
+        <li class="nav-item">
           <%= link_to root_path,class: "nav-link" do %>
             <span class="pcoded-micon">
               <i class="feather icon-home"></i>
@@ -11,7 +11,6 @@
               <%= t "index" %>
             </span>
           <% end %>
-          <div></div>
         </li>
         <li class="nav-item pcoded-hasmenu">
           <%= link_to "#",class: "nav-link" do %>
@@ -64,7 +63,7 @@
           <div></div>
         </li>
         <li class="nav-item">
-          <%= link_to "#", class: "nav-link" do %>
+          <%= link_to order_index_path, class: "nav-link" do %>
             <span class="pcoded-micon">
               <i class="feather icon-sidebar"></i>
             </span>

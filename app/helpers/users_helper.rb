@@ -1,7 +1,7 @@
 module UsersHelper
   def render_admin
     html = []
-    html << content_tag(:div, t("admin"), class: "badge bg-success")
+    html << content_tag(:div, t("manager"), class: "badge bg-success")
     safe_join(html)
   end
 

@@ -214,6 +214,16 @@
 }
 
 .overlay-edit {
+  .w-35 {
+    border-radius: 50%;
+    margin: 0 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px!important;
+    height: 35px!important;
+  }
+
   .btn {
     width: 50px!important;
     height: 50px!important;
@@ -240,4 +250,9 @@
 
 #modal_none {
   display: none;
+}
+
+.no_edit {
+  background-color: #6c757d;
+  border-color: #6c757d;
 }

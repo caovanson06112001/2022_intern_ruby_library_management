@@ -73,10 +73,10 @@
             </div>
           </div>
           <div class="m-10px">
-            <button class="btn btn-danger p-l-10">
+            <%= link_to order_path(@book),class: "btn btn-danger p-l-10", method: "PUT" do %>
               <i class="fab fa-telegram"></i>
               <span> <%= t "book_now" %></span>
-            </button>
+            <% end %>
           </div>
         </div>
         <div class="col- col-sm- col-md- col-lg- col-xl-2 col-xxl-2">

@@ -25,6 +25,7 @@ vi:
   home: "Trang chủ"
   add: "Thêm"
   admin: "Admin"
+  manager: "Quản trị viên"
   action: "Tính năng"
   book_cart: "Giỏ sách"
   community: "Cộng đồng"
@@ -125,7 +126,7 @@ vi:
     account: "Tài khoản"
     change_password: "Đổi mật khẩu"
     profile: "Hồ sơ cá nhân"
-    activate: "Kích hoạt"
+    activate: "Cấp quyền"
     activate_ss: "Kích hoạt thành công"
     activate_ff: "Kích hoạt thất bại"
     not_found: "Không tìm thấy người dùng"
@@ -195,6 +196,8 @@ vi:
     pending: "Chờ duyệt"
     approved: "Chấp nhận"
     returned: "Huỷ bỏ"
+    delete_ss: "Đã xoá sách khỏi giỏ"
+    save: "Đã thêm sách vào giỏ"
   website:
     products:
       not_found_book: "Không tìm thấy sách"
@@ -237,3 +240,5 @@ vi:
       update:
         updated: "Cập nhật nhà xuất bản thành công"
         updated_fails: "Cập nhật nhà xuất bản thất bại"
+  post:
+    index: "Bài viết"
