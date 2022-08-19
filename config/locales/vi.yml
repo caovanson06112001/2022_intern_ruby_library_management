@@ -72,6 +72,11 @@ vi:
   publisher_name: "Nhà xuất bản"
   detail: "Chi Tiết"
   add_cart: "Thêm vào giỏ"
+  reset_cart: "Đã đặt lại giỏ hàng."
+  mess: "Thông báo"
+  go_library: "Thư viện của tôi"
+  order_detail:
+    name: "Mượn sách"
   news:
     post1: "Tin Tức"
     post2: "Sự kiện"
@@ -90,6 +95,9 @@ vi:
     yes_delete: "Có , Xóa nó!"
     delete_icon: "Đã xóa"
     update: "Đã xập nhật"
+    input: "Vui lòng nhập đầy đủ thông tin"
+    start_end: "Ngày mượn phải lớn hơn ngày trả"
+    input_start: "Ngày mượn phải lớn hơn ngày hiện tại"
   user_login:
     error_login: "Tên đăng nhập hoặc mật khẩu không đúng"
     is_login: "Bạn cần đăng nhập"
@@ -151,6 +159,10 @@ vi:
     delete_faild: "Xoá sách thất bại."
     error_update: "Sủa sách thất bại."
     order_approved: "Sách có người đang mượn"
+    code: "Mã đặt sách"
+    date_start: "Ngày mượn"
+    date_return: "Ngày trả"
+    created_at: "Ngày tạo đơn"
   close: "Đóng"
   male: "Nam"
   female: "Nữ"
@@ -164,11 +176,25 @@ vi:
   image: "Ảnh"
   status: "Trạng thái"
   not_order: "Chưa đặt"
+  submit: "Xác nhận"
+  close: "Đóng"
+  need: "Yêu cầu"
   user_login:
     error_login: "Tên đăng nhập hoặc mật khẩu không đúng"
   order:
     index: "Mượn sách"
     delete_all: "Xoá giỏ sách"
+    quantity: "Số lượng mượn"
+    date_start: "Ngày mượn"
+    date_end: "Ngày trả"
+    note_user: "Ghi chú"
+    login: "Bạn cần đăng nhập để có thể đặt được sách"
+    error_order: "Vui lòng chọn ít nhất 1 quyển sách để đặt"
+    text_box: "Nhập thông tin mượn"
+    success: "Đã tạo yêu cầu mượn sách"
+    pending: "Chờ duyệt"
+    approved: "Chấp nhận"
+    returned: "Huỷ bỏ"
   website:
     products:
       not_found_book: "Không tìm thấy sách"

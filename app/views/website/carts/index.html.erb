@@ -1,0 +1,51 @@
+<% provide :title, t("home.cart") %>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-header page-header-0">
+      <div class="card-header">
+        <div>
+          <%= link_to order_index_path, class:"btn btn-danger" do %>
+            <%= t "cart_book" %>
+            <span class="badge bg-secondary count_book">
+              <%= session_book.nil? ? "0" : count_book %>
+            </span>
+          <% end %>
+          <%= link_to carts_path, class:"btn btn-warning" do %>
+            <%= t "my_lib" %>
+          <% end %>
+          <a class="btn btn-success">
+            <%= t "book_app" %>
+          </a>
+          <a class="btn btn-primary">
+            <%= t "book_f" %>
+          </a>
+        </div>
+        <hr>
+        <div class="dt-responsive table-responsive user-profile-list">
+          <table id="user-list-table" class="table nowrap">
+            <thead>
+              <tr>
+                <th>
+                  <%= t "books.date_start" %>
+                </th>
+                <th>
+                  <%= t "books.date_return" %>
+                </th>
+                <th>
+                  <%= t "books.created_at" %>
+                </th>
+                <th>
+                  <%= t "status" %>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="table_book" id="table_book">
+              <%= render partial: "website/carts/cart", collection: @order, as: :order %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

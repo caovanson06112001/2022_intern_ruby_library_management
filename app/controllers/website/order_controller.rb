@@ -4,6 +4,15 @@ class Website::OrderController < WebsiteController
 
   def index; end
 
+  def create
+    @order = Order.new order_params
+    if @order.save
+      render json: @order
+    else
+      render json: {message: "order.fails"}
+    end
+  end
+
   def update
     add_book_to_cart @book
     flash[:success] = t "order.save"
@@ -18,9 +27,15 @@ class Website::OrderController < WebsiteController
 
   def destroy_all
     delete_all_cart
+    flash[:success] = t "order.delete_ss"
+    redirect_to order_index_path
   end
 
   private
+
+  def order_params
+    params.require(:order).permit Order::ORDER_PARAMS
+  end
 
   def find_book
     @book = Book.find_by id: params[:id]

@@ -2,15 +2,40 @@
   style="display: none;" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel"><span class="badge bg-danger">1</span></h5>
+      <div class="modal-header modal-book-blue">
+        <h5 class="modal-title" id="exampleModalToggleLabel">
+          <span class="badge bg-danger books_item"></span>
+          <span class="book_name">
+            <%= t "order.text_box" %>
+          </span>
+        </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <%= form_with do |f| %>
+          <div class="field m-b-10">
+            <p><%= t "order.date_start" %></p>
+            <%= f.date_field :date_start, id: "date_start", class: "form-control" %>
+          </div>
+          <div class="field m-b-10">
+            <p><%= t "order.date_end" %></p>
+            <%= f.date_field :date_end, id: "date_end", class: "form-control" %>
+          </div>
+          <div class="field m-b-10">
+            <p><%= t "order.note_user" %></p>
+            <%= f.text_area :note_user, id: "note_user", class: "form-control" %>
+          </div>
+        <% end %>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-light-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-          data-bs-dismiss="modal"></button>
+        <button class="btn btn-primary btn_order_book">
+          <i class="feather me-2 icon-thumbs-up"></i>
+          <%= t"submit" %>
+        </button>
+        <button class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+          data-bs-dismiss="modal">
+          <%= t "close" %>
+        </button>
       </div>
     </div>
   </div>
