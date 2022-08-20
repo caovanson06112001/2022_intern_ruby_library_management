@@ -62,13 +62,24 @@
           <% end %>
           <div></div>
         </li>
-        <li class="nav-item">
+        <li class="nav-item pcoded-hasmenu">
           <%= link_to order_index_path, class: "nav-link" do %>
             <span class="pcoded-micon">
               <i class="feather icon-sidebar"></i>
             </span>
             <span class="pcoded-mtext">
               <%= t "book_cart" %>
+            </span>
+          <% end %>
+          <div></div>
+        </li>
+        <li class="nav-item">
+          <%= link_to search_products_path, class: "nav-link" do %>
+            <span class="pcoded-micon">
+              <i class="feather icon-sidebar"></i>
+            </span>
+            <span class="pcoded-mtext">
+              <%= t "search" %>
             </span>
           <% end %>
         </li>

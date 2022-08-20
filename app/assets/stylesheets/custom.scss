@@ -266,3 +266,57 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+.w-60 {
+  width: 60%;
+  display: inline;
+}
+
+.time {
+  padding: 5px 0;
+}
+
+.time- {
+  margin-left: 25px;
+}
+
+.time-- {
+  margin-left: 50px;
+}
+
+.time--- {
+  margin-left: 75px;
+}
+
+.time---- {
+  margin-left: 100px;
+}
+
+.time----- {
+  margin-left: 125px;
+}
+
+.time------ {
+  margin-left: 150px;
+}
+
+.time------- {
+  margin-left: 175px;
+}
+
+.col-sm-8 > .time{
+  margin: 0px!important;
+}
+
+.time > .row > * {
+  padding-right: calc(var(--bs-gutter-x) * 0.3);
+  padding-left: calc(var(--bs-gutter-x) * .3);
+}
+
+.comment_user {
+  border-left: 2px solid var(--bs-blue)
+}
+
+.h-30{
+  height: 30px;
+}

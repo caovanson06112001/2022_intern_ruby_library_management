@@ -19,9 +19,14 @@
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav me-auto">
       <li class="nav-item">
-        <%= link_to search_products_path do %>
+        <%= link_to search_products_path, class:"pop-search" do %>
           <i class="feather icon-search"></i>
         <% end %>
+        <div class="search-bar">
+          <input type="text" class="form-control border-0 shadow-none" placeholder="Search here">
+          <button type="button" class="btn-close" aria-label="Close">
+          </button>
+        </div>
       </li>
       <li class="nav-item">
         <a class="full-screen" onclick="javascript:toggleFullScreen()">

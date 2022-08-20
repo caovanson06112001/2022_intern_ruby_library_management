@@ -228,3 +228,8 @@ admin:
       updated_fails: "Update publisher faild"
   post:
     index: "Posts"
+  comments:
+    book: "Last comment"
+    comment: "comment"
+    now: "Someone just commented on the book"
+    answer: "Answer"

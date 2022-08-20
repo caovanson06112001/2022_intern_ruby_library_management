@@ -20,8 +20,24 @@
     </button>
   </a>
 </div>
-<%= render "shares/website/books" %>
-
+<div class="row">
+  <div class="col-sm-12">
+    <h4 class="m-43 text-center">
+      <%= t "top_book" %>
+    </h4>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <%= render @books %>
+</div>
+<div class="text-center">
+  <a href="#">
+    <button class="btn btn-outline-danger more-btn">
+      <%= t "more" %> &gt;&gt;&gt;
+    </button>
+  </a>
+</div>
 <div class="row">
   <div class="col-sm-12">
     <h4 class="m-73 text-center">

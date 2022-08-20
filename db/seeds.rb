@@ -24,10 +24,6 @@ User.create!(
 )
 end
 
-39.times do |n|
-  Category.create!(name: "sach - #{n+1}")
-  name = "sach - #{n+1}"
-end
 
 40.times do |n|
   name = "Nguyen Van A#{n+1}"
