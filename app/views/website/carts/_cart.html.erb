@@ -10,14 +10,16 @@
   </td>
   <td>
     <% if order.pending? %>
-      <span class="badge bg-warning"><%= t "order.pending" %></span>
+      <span class="badge bg-warning w-83"><%= t "order.pending" %></span>
     <% elsif order.approved? %>
-      <span class="badge bg-success"><%= t "order.approved" %></span>
+      <span class="badge bg-success w-83"><%= t "order.approved" %></span>
+    <% elsif order.returned? %>
+      <span class="badge bg-primary w-83"><%= t "order.returned" %></span>
     <% else %>
-      <span class="badge bg-danger"><%= t "order.returned" %></span>
+      <span class="badge bg-danger w-83"><%= t "order.canceled" %></span>
     <% end%>
     <div class="overlay-edit">
-      <%= link_to "javascript:void(0)", {class:"w-35 btn-icon btn-warning", data: {url:cart_path(order)}} do %>
+      <%= link_to cart_path(order), {class:"w-35 btn-icon btn-warning show-order", data: {url:cart_path(order)}, remote: true } do %>
         <i class="fas fa-eye"></i>
       <% end %>
       <%= link_to cart_path(order), class:"w-35 btn-icon btn-danger", method: "DELETE" do %>

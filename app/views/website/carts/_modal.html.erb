@@ -1,0 +1,40 @@
+<div class="modal fade bd-example-modal-lg" tabindex="-1" aria-labelledby="myLargeModalLabel" style="display: none;"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="myLargeModalLabel">
+          <%= t "order.details" %>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-hover m-b-0 table-book">
+            <thead>
+              <tr>
+                <th>
+                  <%= t "books.image" %>
+                </th>
+                <th>
+                  <%= t "books.name" %>
+                </th>
+                <th>
+                  <%= t "books.count" %>
+                </th>
+                <th>
+                  <%= t "books.author" %>
+                </th>
+                <th>
+                  <%= t "books.publiser" %>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="show_order_book">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

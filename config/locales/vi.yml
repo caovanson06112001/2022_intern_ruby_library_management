@@ -164,6 +164,7 @@ vi:
     date_start: "Ngày mượn"
     date_return: "Ngày trả"
     created_at: "Ngày tạo đơn"
+    is_approved: "Yêu cầu đã chấp nhận, hoặc sách đã trả không thể huỷ"
   close: "Đóng"
   male: "Nam"
   female: "Nữ"
@@ -195,9 +196,13 @@ vi:
     success: "Đã tạo yêu cầu mượn sách"
     pending: "Chờ duyệt"
     approved: "Chấp nhận"
-    returned: "Huỷ bỏ"
+    returned: "Đã trả"
+    canceled: "Huỷ bỏ"
     delete_ss: "Đã xoá sách khỏi giỏ"
     save: "Đã thêm sách vào giỏ"
+    returned_success: "Huỷ yêu cầu đặt sách thành công"
+    returned_faild: "Huỷ yêu cầu đặt sách thất bại"
+    details: "Chi tiết đơn"
   website:
     products:
       not_found_book: "Không tìm thấy sách"

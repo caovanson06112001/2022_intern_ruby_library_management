@@ -21,4 +21,15 @@ class Book < ApplicationRecord
   validates :quantity, presence: true, numericality: {only_integer: true}
 
   scope :latest_books, ->{order created_at: :desc}
+
+  scope :by_category_id, (lambda do |id|
+    where(category_books: {category_id: id})
+  end)
+
+  scope :by_order, ->(id){where(order_details: {order_id: id})}
+
+  scope :select_order, (lambda do
+    select "books.*,order_details.quantity,
+            order_details.status,order_details.quantity_real"
+  end)
 end

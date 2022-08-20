@@ -7,11 +7,8 @@
             <%= t "category.title" %>
           </button>
         </div>
-        <ul class="category_menu">
-          <li>
-            <a href="">
-            </a>
-          </li>
+        <ul class="list-group list-group-flush">
+          <%= render partial: "website/categories/category", collection: @categories, as: :category %>
         </ul>
       </div>
       <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 col-xxl-10 p-0">

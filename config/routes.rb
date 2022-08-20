@@ -14,8 +14,9 @@ Rails.application.routes.draw do
     end
     scope module: "website" do
       root "home#index"
-      get "/product/:id", to: "products#show", :as => :product
+      get "/category_books/:id", to: "products#index", :as => :category
       delete "/reset_cart", to: "order#delete_all_cart"
+      resources :products, only: :show
       resources :order, :carts
     end
     get "/login", to: "admin/sessions#new"

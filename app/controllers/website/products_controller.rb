@@ -1,5 +1,11 @@
 class Website::ProductsController < WebsiteController
   before_action :find_by_id, only: :show
+
+  def index
+    @book = Book.joins(:category_books).by_category_id params[:id]
+    render json: @book
+  end
+
   def show
     @category_books = @book.category_books
   end
