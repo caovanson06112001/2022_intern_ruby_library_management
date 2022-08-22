@@ -1,0 +1,3 @@
+$(".title-search-result").text("<%= I18n.t('result_search') %>")
+$(".result-search").html("<%= j render @books %>")
+$("#pagySearchBook").html("<%== j pagy_nav @pagy %>")

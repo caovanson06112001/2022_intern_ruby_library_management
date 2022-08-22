@@ -18,6 +18,12 @@ Rails.application.routes.draw do
       delete "/reset_cart", to: "order#delete_all_cart"
       resources :products, only: :show
       resources :order, :carts
+      get "/order", to: "order#index"
+      resources :products, only: :show do
+        collection do
+          get "search", to: "search#index"
+        end
+      end
     end
     get "/login", to: "admin/sessions#new"
   end
