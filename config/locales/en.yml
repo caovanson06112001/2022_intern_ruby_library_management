@@ -165,6 +165,7 @@ en:
     delete_faild: "Delete a book faild"
     error_update: "Update a book faild"
     order_approved: "Delete a book faild"
+    is_approved: "Accepted books cannot be canceled"
   close: "Close"
   male: "Male"
   female: "Female"
@@ -188,6 +189,9 @@ en:
     success: "Created a request to borrow a book"
     delete_ss: "Book removed"
     save: "Book added to cart"
+    returned_success: "Cancellation of order is successful"
+    returned_faild: "Cancellation of failed booking request"
+    details: "Menu details"
 admin:
   authors:
     index:
