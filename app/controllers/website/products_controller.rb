@@ -1,5 +1,5 @@
 class Website::ProductsController < WebsiteController
-  before_action :find_by_id, only: :show
+  before_action :find_by_id, :find_comment, only: :show
 
   def index
     @book = Book.joins(:category_books).by_category_id params[:id]
@@ -8,6 +8,7 @@ class Website::ProductsController < WebsiteController
 
   def show
     @category_books = @book.category_books
+    @com = Comment.new
   end
 
   private
@@ -18,5 +19,10 @@ class Website::ProductsController < WebsiteController
 
     flash[:danger] = t "website.products.not_found_book"
     redirect_to root_path
+  end
+
+  def find_comment
+    @comments = Comment.latest.find_comment params[:id]
+    return if @comments
   end
 end

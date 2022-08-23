@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get "/category_books/:id", to: "products#index", :as => :category
       delete "/reset_cart", to: "order#delete_all_cart"
       resources :products, only: :show
-      resources :order, :carts
+      resources :order, :carts, :comments
       get "/order", to: "order#index"
       resources :products, only: :show do
         collection do

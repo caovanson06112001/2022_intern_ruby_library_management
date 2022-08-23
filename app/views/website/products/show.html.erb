@@ -1,5 +1,6 @@
 <% provide :title, t("home.product") %>
 
+<%= render "website/products/modal_comment" %>
 <div class="col-sm-12">
   <div class="page-header page-header-0">
     <div class="card-header">
@@ -96,6 +97,33 @@
         <hr>
         <div class="col-sm-9">
           <%= sanitize @book.description %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="">
+  <div class="">
+    <div class="page-header page-header-0">
+      <div class="card-header">
+        <h4>
+          <%= t "comments.book" %>
+        </h4>
+        <hr>
+        <div class="col-sm-8">
+          <%= form_for @com,url: comments_path, remote: true do |f| %>
+            <%= f.text_field :content, class:"form-control w-60" %>
+            <%= f.hidden_field :book_id, class:"form-control w-60", value: @book.id %>
+            <%= f.hidden_field :user_id, class:"form-control w-60", value: current_user.id %>
+            <%= f.hidden_field :parent_id, class:"form-control w-60", value: 0 %>
+            <button type="submit" class="btn btn-primary">
+              <%= t "comments.comment" %>
+            </button>
+          <% end %>
+        </div>
+        <hr>
+        <div class="col-sm-8 comment-box">
+          <%= show_comments(@comments, 0, "", "").html_safe %>
         </div>
       </div>
     </div>

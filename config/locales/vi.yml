@@ -251,3 +251,8 @@ vi:
         updated_fails: "Cập nhật nhà xuất bản thất bại"
   post:
     index: "Bài viết"
+  comments:
+    book: "Bình luận gần nhất"
+    comment: "Bình luận"
+    now: "Có người vừa bình luận sách"
+    answer: "Trả lời"
