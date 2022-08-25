@@ -21,6 +21,8 @@ gem "rails", "~> 6.1.6"
 gem "rails-i18n"
 gem "redis", "~> 3.0"
 gem "sass-rails", ">= 6"
+gem "simplecov"
+gem "simplecov-rcov"
 gem "tinymce-rails"
 gem "toastr-rails"
 gem "turbolinks", "~> 5"
@@ -38,7 +40,11 @@ group :development, :test do
 end
 
 group :development, :test do
+  gem "database_cleaner", "~> 1.5", ">= 1.5.3"
+  gem "factory_bot_rails"
+  gem "rails-controller-testing"
   gem "rspec-rails", "~> 4.0.1"
+  gem "shoulda-matchers"
 end
 
 group :development do

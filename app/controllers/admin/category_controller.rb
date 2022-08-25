@@ -34,9 +34,11 @@ class Admin::CategoryController < AdminController
 
   def destroy
     if @category.destroy
-      render json: {"message": t("category.deleted"), "code": 200}
+      render json: {"message": t("category.deleted"),
+                    "code": Settings.status.success}
     else
-      render json: {"message": t("category.deleted_fails"), "code": 404}
+      render json: {"message": t("category.deleted_fails"),
+                    "code": Settings.status.delete_fails}
     end
   end
 
