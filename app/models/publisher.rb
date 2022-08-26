@@ -4,7 +4,8 @@ class Publisher < ApplicationRecord
   has_many :books, dependent: :destroy
   has_one_attached :image
 
-  validates :name, presence: true, length: {minimum: Settings.publishers.min}
+  validates :name, presence: true, length:
+            {minimum: Settings.publishers.min, maximum: Settings.publishers.max}
   validates :description, presence: true,
             length: {minimum: Settings.publishers.min}
   validates :image, content_type: {in: Settings.author.image_type},
