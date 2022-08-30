@@ -46,4 +46,4 @@
     </div>
   </div>
 </div>
-<%= render "website/users/modal_avatar" %>
+<%= render "website/users/modal_avatar" if current_user? @user %>
