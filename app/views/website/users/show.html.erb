@@ -1,0 +1,49 @@
+<% provide :title, t("show_user") %>
+
+<div class="row">
+  <div class="pcoded-content">
+    <div class="user-profile user-card mb-4">
+      <div class="card-header border-0 p-0 pb-0">
+        <div class="cover-img-block">
+          <%= image_tag "user/cover.jpg" , alt: "user" , class: "img-fluid" %>
+        </div>
+      </div>
+      <div class="card-body py-0">
+        <div class="user-about-block m-0">
+          <div class="row">
+            <%= render "website/users/banner" %>
+            <div class="col-md-8 mt-md-4">
+              <div class="row">
+                <div class="col-md-6">
+                  <a href="#" class="mb-1 text-muted d-flex align-items-end text-h-primary">
+                    <i class="feather icon-globe me-2 f-18"></i>www.<%= @user.email %>
+                  </a>
+                  <div class="clearfix"></div>
+                  <a href="#" class="mb-1 text-muted d-flex align-items-end text-h-primary">
+                    <i class="feather icon-mail me-2 f-18"></i>
+                    <%= @user.email %>
+                  </a>
+                  <div class="clearfix"></div>
+                  <a href="#" class="mb-1 text-muted d-flex align-items-end text-h-primary">
+                    <i class="feather icon-phone me-2 f-18"></i>
+                    + <%= @user.phone_number %>
+                  </a>
+                </div>
+                <div class="col-md-6">
+                  <div class="media">
+                    <i class="feather icon-map-pin me-2 f-18"></i>
+                    <div class="media-body text-start">
+                      <p class="mb-0 text-muted">...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <%= render "website/users/profile" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "website/users/modal_avatar" %>

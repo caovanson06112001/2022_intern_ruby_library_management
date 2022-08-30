@@ -1,0 +1,34 @@
+<div class="col-md-4 text-center mt-n5">
+  <div class="change-profile text-center">
+    <div class="dropdown w-auto d-inline-block">
+      <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="profile-dp">
+          <div class="position-relative d-inline-block">
+            <% if @user.image.attached? %>
+              <%= image_tag @user.image, class: "img-radius img-fluid wid-100" %>
+            <% else %>
+              <%= image_tag "user/avatar.png", class: "img-radius img-fluid wid-100" %>
+            <% end %>
+          </div>
+          <div class="overlay">
+            <span><% t" change" %></span>
+          </div>
+        </div>
+        <div class="certificated-badge">
+          <i class="fas fa-certificate text-c-blue bg-icon"></i>
+          <i class="fas fa-check front-icon text-white"></i>
+        </div>
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#"><i class="feather icon-upload-cloud me-2"></i><%= t "upload_new" %></a>
+        <a class="dropdown-item" href="#"><i class="feather icon-image me-2"></i><%= t "from_photos" %></a>
+        <a class="dropdown-item" href="#"><i class="feather icon-film me-2"></i><%= t "upload_video" %></a>
+        <a class="dropdown-item" href="#"><i class="feather icon-trash-2 me-2"></i><%= t "remove" %></a>
+      </div>
+    </div>
+  </div>
+  <h5 class="mb-1">
+    <%= @user.name %>
+  </h5>
+  <p class="mb-2 text-muted"><%= t "designer" %></p>
+</div>

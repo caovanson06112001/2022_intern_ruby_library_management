@@ -1,0 +1,25 @@
+<div class="modal fade" id="ModalEditAvatar" tabindex="-1" aria-labelledby="exampleModalCenterTitle" style="display: none;"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="myLargeModalLabel">
+          <%= t "users.new_avatar" %>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_for @user, url: user_path(@user) do |f| %>
+          <%= render "shares/error_messages", object: f.object%>
+          <div class="">
+            <%= f.file_field :image, class: "form-control", id:"image_user" %>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn  btn-primary">Save changes</button>
+            <button type="button" class="btn  btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

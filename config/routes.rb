@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       get "/login", to: "users/sessions#new"
       post "/login", to: "users/sessions#create"
       delete "/logout", to: "users/sessions#destroy"
-      get "/signup", to: "users/registration#new"
+      get "/signup", to: "users/registrations#new"
     end
     namespace :admin do
       get "/home", to: "home#index"
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get "/category_books/:id", to: "products#index", :as => :category
       delete "/reset_cart", to: "order#delete_all_cart"
       resources :products, only: :show
-      resources :order, :carts, :comments
+      resources :order, :carts, :comments, :users
       get "/order", to: "order#index"
       resources :products, only: :show do
         collection do
