@@ -57,3 +57,10 @@ status:
   success: 200
   internal_server_error: 500
   not_found: 404
+devise:
+  stretches_min: 1
+  stretches_max: 12
+  email_regex: !ruby/regexp '/\A[^@\s]+@[^@\s]+\z/'
+  pass_max: 128
+  pass_min: 6
+  reset_password_within: 6

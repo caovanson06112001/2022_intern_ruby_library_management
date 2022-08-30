@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
   before_save :downcase_email
   has_one_attached :image
 
@@ -12,7 +15,6 @@ class User < ApplicationRecord
   validates :password, presence: true,
                        length: {minimum: Settings.user.password_minimum},
                        allow_nil: true
-  has_secure_password
 
   scope :latest_user, ->{order created_at: :desc}
 

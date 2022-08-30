@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
+    devise_for :users, controllers: { sessions: "users/sessions" }
+    as :user do
+      get "/login", to: "users/sessions#new"
+      post "/login", to: "users/sessions#create"
+      delete "/logout", to: "users/sessions#destroy"
+      get "/signup", to: "users/registration#new"
+    end
     namespace :admin do
       get "/home", to: "home#index"
-      get "/login", to: "sessions#new"
-      post "/login", to: "sessions#create"
-      get "/register", to: "sessions#register"
-      delete "/logout", to: "sessions#destroy"
       put "/user/activate:id", to: "users#update", :as => :user_activate
       resources :category
       resources :users
@@ -25,6 +28,5 @@ Rails.application.routes.draw do
         end
       end
     end
-    get "/login", to: "admin/sessions#new"
   end
 end

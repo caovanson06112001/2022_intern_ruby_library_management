@@ -67,7 +67,7 @@
           <% end %>
         </div>
       </li>
-      <% if logged_in? %>
+      <% if user_signed_in? %>
         <li>
           <div class="dropdown drp-user">
             <a data-bs-toggle="dropdown" class="dropdown-toggle">
@@ -79,7 +79,7 @@
                 <span>
                   <%= current_user.name %>
                 </span>
-                <%= link_to admin_logout_path, class:"dud-logout", method: "delete" do %>
+                <%= link_to logout_path, class:"dud-logout", method: "delete" do %>
                   <i class="feather icon-log-out"></i>
                 <% end %>
               </div>

@@ -75,7 +75,7 @@
         </div>
         <div class="order_book">
           <button data-bs-toggle="modal" id="modal_none" data-bs-target="#exampleModalToggle">hrllo</button>
-          <% if logged_in? %>
+          <% if user_signed_in? %>
             <%= link_to "javascript:void(0)", {class:"btn btn-success order",
             data: {bs_toggle: "", bs_target: "#exampleModalToggle", user_id: current_user.id, url_order_user: carts_path}} do %>
               <i class="feather me-2 icon-check-circle"></i> <%= t "order.index" %>
