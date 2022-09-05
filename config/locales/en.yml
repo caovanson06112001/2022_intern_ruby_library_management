@@ -78,6 +78,7 @@ en:
   mess: "Notify"
   go_library: "Return library"
   manager: "Manager"
+  show_user: "Show user"
   order_detail:
     name: "Order books"
     quantity: "Amount borrowed"

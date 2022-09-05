@@ -80,6 +80,7 @@ vi:
   enter_book_name: "Nhập tên sách các bạn muốn tìm ..."
   must_greater_0: "Số lượng mượn phải lớn hơn 0"
   cannot_be_greater_than_quantity_book: "Số lượng sách trong thư viện không đủ đáp ứng"
+  show_user: "Người dùng"
   order_detail:
     name: "Mượn sách"
   choose_category: "Chọn danh mục muốn tìm kiếm"
@@ -297,3 +298,36 @@ vi:
     auths:
       mail:
         title_send_note_admin: "Lời nhắn của admin tới yêu cầu mượn sách của bạn"
+  post:
+    index: "Bài viết"
+  comments:
+    book: "Bình luận gần nhất"
+    comment: "Bình luận"
+    now: "Có người vừa bình luận sách"
+    answer: "Trả lời"
+  devise:
+    confirmations:
+      confirmed: "Địa chỉ email của bạn đã được xác nhận thành công."
+      send_instructions: "Bạn sẽ nhận được một email với hướng dẫn về cách xác nhận địa chỉ email của bạn sau vài phút."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được một email có hướng dẫn về cách xác nhận địa chỉ email của bạn trong vài phút."
+    failure:
+      already_authenticated: "Bạn đã đăng nhập."
+      inactive: "Tài khoản của bạn chưa được kich hoạt."
+      invalid: "%{authentication_keys} or password không hợp lệ."
+      locked: "Tài khoản của bạn bị khóa."
+      last_attempt: "Bạn còn một lần thử nữa trước khi tài khoản của bạn bị khóa."
+      not_found_in_database: "%{authentication_keys} or password không hợp lệ."
+      timeout: "Phiên của bạn đã hết hạn. Vui lòng đăng nhập lại để tiếp tục."
+      unauthenticated: "Bạn cần đăng nhập hoặc đăng ký trước khi tiếp tục."
+      unconfirmed: "Bạn phải xác nhận địa chỉ email của mình trước khi tiếp tục."
+    mailer:
+      confirmation_instructions:
+        subject: "Xác nhận hướng dẫn"
+      reset_password_instructions:
+        subject: "Đặt lại hướng dẫn mật khẩu"
+      unlock_instructions:
+        subject: "Hướng dẫn mở khóa"
+      email_changed:
+        subject: "Email đã thay đổi"
+      password_change:
+        subject: "Mật khẩu đã được thay đổi"

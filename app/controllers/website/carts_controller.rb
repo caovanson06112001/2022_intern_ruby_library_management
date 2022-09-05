@@ -4,7 +4,7 @@ class Website::CartsController < WebsiteController
   before_action :check_approved, only: :destroy
 
   def index
-    @pagy, @order = pagy current_user.order.latest
+    @pagy, @order = pagy current_user.orders.latest
   end
 
   def show
