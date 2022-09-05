@@ -13,7 +13,7 @@ RSpec.describe Admin::CategoryController, type: :controller do
   }
 
   before do
-    log_in admin
+    sign_in admin
   end
 
   describe "GET amdin/category#index" do
