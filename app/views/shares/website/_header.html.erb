@@ -70,12 +70,20 @@
       <% if user_signed_in? %>
         <li>
           <div class="dropdown drp-user">
-            <a data-bs-toggle="dropdown" class="dropdown-toggle">
-              <%= image_tag "user/avatar.png", alt: "user", class: "img-radius wid-40" %>
+            <a data-bs-toggle="dropdown" class="dropdown-toggle avatar_user_header">
+              <% if current_user.image.attached? %>
+                <%= image_tag current_user.image, class: "img-radius wid-40" %>
+              <% else %>
+                <%= image_tag "user/avatar.png", class: "img-radius wid-40" %>
+              <% end %>
             </a>
             <div class="dropdown-menu dropdown-menu-end profile-notification">
               <div class="pro-head">
-                <%= image_tag "user/avatar.png", alt: "user", class: "img-radius wid-40" %>
+                <% if current_user.image.attached? %>
+                  <%= image_tag current_user.image, class: "img-radius wid-40" %>
+                <% else %>
+                  <%= image_tag "user/avatar.png", class: "img-radius wid-40" %>
+                <% end %>
                 <span>
                   <%= current_user.name %>
                 </span>
