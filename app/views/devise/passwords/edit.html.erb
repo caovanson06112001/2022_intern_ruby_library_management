@@ -1,0 +1,35 @@
+<% provide :title, t("reset_password") %>
+
+<div class="limiter">
+  <div class="container-login100 background-login">
+    <div class="wrap-login100">
+      <%= form_for :user, as: resource_name, url: user_password_path, :html => {class:"login100-form validate-form", method: "PUT"} do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+        <span class="login100-form-logo">
+          <%= image_tag "user/avatar.png", alt: "user", class: "img-books" %>
+        </span>
+        <span class="login100-form-title p-b-34 p-t-27">
+          <%= t"reset_password" %>
+        </span>
+        <div class="wrap-input100 validate-input" data-validate="Enter username">
+          <%= f.password_field :password, class: "input100", placeholder:"New password" %>
+          <span class="focus-input100" data-placeholder="&#xf207;"></span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate="Enter username">
+          <%= f.password_field :password_confirmation, class: "input100", placeholder:"Confirm new password" %>
+          <span class="focus-input100" data-placeholder="&#xf207;"></span>
+        </div>
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn">
+            <%= t"users.change_my_password" %>
+          </button>
+        </div>
+        <div class="text-center p-t-90">
+          <%= link_to t("index"), root_path, class:"txt1" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div id="dropDownSelect1"></div>
