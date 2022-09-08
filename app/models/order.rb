@@ -17,6 +17,14 @@ class Order < ApplicationRecord
   scope :latest, ->{order updated_at: :desc}
   delegate :name, to: :user, prefix: true
 
+  ransacker :date_return_eq do
+    Order.sql("date(date_return_eq)")
+  end
+
+  ransacker :date_start_eq do
+    Order.sql("date(date_start_eq)")
+  end
+
   def send_mail_confirm_order
     OrderMailer.send_note_admin(self).deliver_now
   end

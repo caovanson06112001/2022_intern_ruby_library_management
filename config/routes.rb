@@ -21,12 +21,12 @@ Rails.application.routes.draw do
       root "home#index"
       get "/category_books/:id", to: "products#index", :as => :category
       delete "/reset_cart", to: "order#delete_all_cart"
-      resources :products, only: :show
       resources :order, :carts, :comments, :users
       get "/order", to: "order#index"
-      resources :products, only: :show do
+      resources :products do
         collection do
           get "search", to: "search#index"
+          post "search", to: "search#show"
         end
       end
     end

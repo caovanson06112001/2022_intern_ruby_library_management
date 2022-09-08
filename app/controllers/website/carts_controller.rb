@@ -1,10 +1,13 @@
 class Website::CartsController < WebsiteController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :find_order, only: %i(show destroy)
   before_action :check_approved, only: :destroy
 
   def index
-    @pagy, @order = pagy current_user.orders.latest
+    @search = current_user.orders.ransack(params[:q])
+    @search.sorts = "created_at desc" if @search.sorts.empty?
+    @pagy, @orders = pagy @search.result(distinct: true),
+                          link_extra: 'data-remote="true"'
   end
 
   def show

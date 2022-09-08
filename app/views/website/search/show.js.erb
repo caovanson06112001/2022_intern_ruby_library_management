@@ -8,8 +8,6 @@ if(<%= @pagy.count %> == 0){
     showConfirmButton: false
   })
 }else{
-  $('.sort_by_name').html("<%= j sort_link(@search, :name, t("book.sort_by_name"), default_order: :asc, remote: true) %>");
-  $('.sort_by_created_at').html("<%= j sort_link(@search, :created_at, t("book.sort_by_created_at"), default_order: :asc, remote: true) %>");
   $(".pagySearchBook").html("<%== j pagy_nav @pagy %>")
   $(".search-book").remove();
   $(".search-book-p").prepend("<span class='spinner-border spinner-border-sm spinner-border-sm-book' role='status'></span>")
