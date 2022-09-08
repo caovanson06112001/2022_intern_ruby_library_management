@@ -1,5 +1,5 @@
 class Admin::BooksController < AdminController
-  before_action :logged_in_user
+  load_and_authorize_resource
   before_action :find_book, :find_array_category, except: %i(index new create)
   before_action :find_history_order, only: :destroy
 

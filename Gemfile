@@ -7,6 +7,7 @@ gem "active_model_serializers", "~> 0.10.2"
 gem "active_storage_validations", "0.8.2"
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.4", require: false
+gem "cancancan"
 gem "config"
 gem "delayed_job_active_record"
 gem "devise", "~> 4.1"

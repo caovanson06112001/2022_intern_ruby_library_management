@@ -1,4 +1,5 @@
 require "rails_helper"
+require "cancan/matchers"
 include SessionsHelper
 
 RSpec.describe Admin::CategoryController, type: :controller do
@@ -73,7 +74,7 @@ RSpec.describe Admin::CategoryController, type: :controller do
     context "When category is not found" do
       before do
         get :edit, params:{
-          id: -1
+          id: ""
         }
       end
 
@@ -134,8 +135,8 @@ RSpec.describe Admin::CategoryController, type: :controller do
   describe "DELETE amdin/category#update" do
     context "When category is not found" do
       before do
-        delete :destroy, params:{
-          id: -1
+        delete :destroy, xhr: true, params:{
+          id: ""
         }
       end
 
@@ -159,7 +160,7 @@ RSpec.describe Admin::CategoryController, type: :controller do
     context "When delete category failed" do
       before do
         delete :destroy, params:{
-          id: -1
+          id: ""
         }
       end
 
