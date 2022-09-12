@@ -1,4 +1,5 @@
 class Admin::CategoryController < AdminController
+  load_and_authorize_resource
   before_action :find_category, except: %i(index new create)
 
   def index

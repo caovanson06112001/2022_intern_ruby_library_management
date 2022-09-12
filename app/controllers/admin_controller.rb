@@ -1,5 +1,19 @@
 class AdminController < ApplicationController
   before_action :authenticate_user!
+  before_action :block_user
+
+  check_authorization
+
+  rescue_from CanCan::AccessDenied do |exception|
+    respond_to do |format|
+      format.json{head :forbidden, content_type: "text/html"}
+      format.html do
+        redirect_back fallback_location: admin_books_path,
+                      alert: exception.message
+      end
+      format.js{head :forbidden, content_type: "text/html"}
+    end
+  end
 
   private
 
@@ -21,11 +35,7 @@ class AdminController < ApplicationController
     flash[:danger] = t "category.find_error"
   end
 
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:message] = t "user_login.is_login"
-    redirect_to admin_login_path
+  def block_user
+    redirect_to root_path if current_user.user?
   end
 end

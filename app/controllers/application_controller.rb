@@ -19,10 +19,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for resource
-    if current_user.admin?
-      (stored_location_for(resource) || admin_home_path)
-    else
+    if current_user.user?
       (stored_location_for(resource) || root_path)
+    else
+      admin_home_path
     end
   end
 
@@ -43,13 +43,5 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t ".please_log_in"
-    redirect_to admin_login_path
   end
 end
