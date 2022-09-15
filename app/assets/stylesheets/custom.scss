@@ -251,8 +251,8 @@
 
 .result-search {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  height: 340px;
 }
 
 .w-60 {
@@ -389,4 +389,37 @@
   .modal-lg, .modal-xl {
     max-width: 1000px !important;
   }
+}
+
+.m-2-2 {
+  margin: 0.5rem 0.5rem 0 0.5rem!important;
+}
+
+.m-2-3 {
+  margin: 0rem 0.5rem 0 0.5rem!important;
+}
+
+.m-2-4 {
+  margin: 0rem 0.5rem 0.5rem 0.5rem!important;
+}
+
+.progress-bar-load-book {
+  height: 6px;
+}
+
+.m-b-0 {
+  margin-bottom: 0px!important;
+}
+
+.hidden-item {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#progress-bar-load-book {
+  width: 1%;
+}
+
+.sort {
+  padding-right: 10px;
 }

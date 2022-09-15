@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-sm-12">
-    <div class="card">
+    <div class="card m-b-0">
       <div class="card-header">
         <div class="row">
           <div class="col-sm-12">
@@ -12,22 +12,22 @@
             <hr>
           </div>
         </div>
-        <%= form_with url: search_products_path, method: :get, local: false do |f| %>
+        <%= search_form_for @search, url: search_products_path, method: :post, remote: true do |f| %>
           <div class="row">
             <div class="col-12 col-sm-12 col-md- col-lg- col-xl- col-xxl-4">
-              <%= f.text_field :book_name, id: :book_name, placeholder: t("enter_book_name"), class:"form-control" %>
+              <%= f.search_field :name_cont, placeholder: t("enter_book_name"), class:"form-control" %>
             </div>
             <div class="col-12 col-sm-12 col-md- col-lg- col-xl- col-xxl-3">
-              <%= f.select :category, options_for_select(Category.pluck(:name, :id)), {include_blank: t("choose_category")},
+              <%= f.select :category_books_category_id_eq, options_for_select(Category.pluck(:name, :id)), {include_blank: t("choose_category")},
                 {:class => "form-select"} %>
             </div>
             <div class="col-12 col-sm-12 col-md- col-lg- col-xl- col-xxl-3">
-              <%= f.select :author, options_for_select(Author.pluck(:name, :id)), {include_blank: t("choose_author")},
+              <%= f.select :author_id_eq, options_for_select(Author.pluck(:name, :id)), {include_blank: t("choose_author")},
                 {:class => "form-select"} %>
             </div>
             <div class="col-12 col-sm-12 col-md- col-lg- col-xl- col-xxl-2">
-              <button type="submit" class="btn btn-danger w-100">
-                <i class="fas fa-search"></i>
+              <button type="submit" class="btn btn-danger w-100 search-book-p">
+                <i class="fas fa-search search-book"></i>
                 <span> <%= t "search" %></span>
               </button>
             </div>
@@ -37,16 +37,26 @@
     </div>
   </div>
 <div class="row">
-  <div class="col-sm-12">
-    <h4 class="text-center title-search-result"></h4>
-    <hr>
+  <button class="btn btn-primary book-loading-bar event-btn m-2-2 hidden-item" type="button">
+    <span class="spinner-border spinner-border-sm" role="status"></span>
+    <span class="load-text"></span>
+    <span class="btn-text"></span>
+  </button>
+  <hr class="m-2-4">
+  <div class="flex">
+    <div class="sort sort_by_name">
+      <%= sort_link(@search, :name, t("book.sort_by_name"), default_order: :desc, remote: true) %>
+    </div>
+    <div class="sort sort_by_created_at">
+      <%= sort_link(@search, :created_at, t("book.sort_by_created_at"), default_order: :desc, remote: true) %>
+    </div>
   </div>
 </div>
 <div class="row">
-  <div class="result-search">
+  <div class="result-search row">
     <%= render @books %>
   </div>
   <div class="pagySearchBook">
-    <%== pagy_nav @pagy %>
+    <%== pagy_nav @pagy, remote: true %>
   </div>
 </div>

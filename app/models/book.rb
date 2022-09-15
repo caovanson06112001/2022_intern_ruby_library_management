@@ -20,6 +20,10 @@ class Book < ApplicationRecord
             length: {minimum: Settings.book.min}
   validates :quantity, presence: true, numericality: {only_integer: true}
 
+  ransack_alias :bo, :name_or_description
+
+  scope :quantity_book, ->(amount){where("quantity > ?", amount)}
+
   scope :latest_books, ->{order created_at: :desc}
 
   scope :by_category_id, (lambda do |id|
@@ -46,5 +50,17 @@ class Book < ApplicationRecord
 
   def display_image
     image.filename.present? ? image : ""
+  end
+
+  def self.ransackable_attributes auth_object = nil
+    if auth_object == :user
+      %w(name description)
+    else
+      super
+    end
+  end
+
+  def self.ransackable_scopes _auth_object = nil
+    [:quantity_book]
   end
 end

@@ -22,6 +22,39 @@
           </a>
         </div>
         <hr>
+        <div class="row">
+          <div class="row">
+            <div class="col-sm-12">
+              <h4 class="text-center text-danger">
+                <%= t "order.search" %>
+              </h4>
+              <hr>
+            </div>
+          </div>
+          <%= search_form_for @search, url: carts_path, method: :get, remote: true do |f| %>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                <%= f.label t("books.date_start"), class:"form-label" %>
+                <%= f.date_field :date_start_eq, class:"form-control" %>
+              </div>
+              <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                <%= f.label t("books.date_return"), class:"form-label" %>
+                <%= f.date_field :date_return_eq, class:"form-control" %>
+              </div>
+              <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                <%= f.label t("status"), class:"form-label" %>
+                <%= f.select :status_eq, Order.statuses, {include_blank: t("choose_status")}, {:class => "form-select"} %>
+              </div>
+              <div class="col-12 col-sm-12 col-md- col-lg- col-xl- col-xxl-2">
+                <label class="form-label"> .</label>
+                <button type="submit" class="btn btn-danger w-100 search-book-p">
+                  <i class="fas fa-search search-book"></i>
+                  <span> <%= t "search" %></span>
+                </button>
+              </div>
+            </div>
+          <% end %>
+        </div>
         <div class="dt-responsive table-responsive user-profile-list">
           <table id="user-list-table" class="table nowrap">
             <thead>
@@ -41,7 +74,7 @@
               </tr>
             </thead>
             <tbody class="table_book" id="table_book">
-              <%= render partial: "website/carts/cart", collection: @order, as: :order %>
+              <%= render partial: "website/carts/cart", collection: @orders, as: :order %>
             </tbody>
           </table>
         </div>
